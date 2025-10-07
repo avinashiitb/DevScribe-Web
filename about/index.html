@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Devscribe | Building the Future of Technical Documentation</title>
+    <meta name="description" content="Learn about Devscribe's mission to revolutionize technical documentation for software engineers and architects. Our story, values, and vision for developer tools.">
+    <meta name="keywords" content="about devscribe, company mission, developer tools, technical documentation software, software development team">
+    <link rel="canonical" href="https://devscribe.app/about.html">
+    
+    <meta property="og:title" content="About Devscribe - Our Mission & Story">
+    <meta property="og:description" content="Building the future of technical documentation for developers worldwide.">
+    <meta property="og:url" content="https://devscribe.app/about.html">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {display: flex; gap: 2rem; list-style: none;}
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {color: var(--primary);}
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .header {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {font-size: 3.5rem; margin-bottom: 1rem;}
+        .header p {font-size: 1.3rem; opacity: 0.95;}
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .value-icon {font-size: 2.5rem; margin-bottom: 1rem;}
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .value-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {font-size: 2.5rem;}
+            .nav-links {display: none;}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Devscribe</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features.html">Features</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/docs/">Documentation</a></li>
+            </ul>
+            <a href="/download.html" class="cta-btn">Download for Mac</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>About Devscribe</h1>
+        <p>Building the future of technical documentation</p>
+    </header>
+
+    <section class="section">
+        <h2>Our Mission</h2>
+        <p>Devscribe was created to solve a fundamental problem in software development: the fragmentation of documentation tools. We believe that developers and architects should have everything they need in one place—from writing docs to creating diagrams to testing code—without switching between multiple applications.</p>
+        <p>Our mission is to empower software engineers, architects, and educators with a unified workspace that makes technical documentation effortless, beautiful, and functional.</p>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+        <h2>Why We Built Devscribe</h2>
+        <p>As software engineers ourselves, we experienced the daily frustration of juggling multiple tools:</p>
+        <ul style="color: var(--gray); margin-left: 2rem; margin-bottom: 2rem; font-size: 1.1rem;">
+            <li style="margin-bottom: 1rem;">Switching between a text editor, diagramming tool, code editor, API client, and database manager</li>
+            <li style="margin-bottom: 1rem;">Losing context every time we changed applications</li>
+            <li style="margin-bottom: 1rem;">Spending more time on tooling than actual documentation</li>
+            <li style="margin-bottom: 1rem;">Struggling to keep documentation synchronized with code changes</li>
+            <li style="margin-bottom: 1rem;">Difficulty creating interactive, executable documentation</li>
+        </ul>
+        <p>We knew there had to be a better way. That's why we built Devscribe—a single, powerful application that brings everything together in one elegant workspace.</p>
+    </section>
+
+    <section class="section">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">👨‍💻</div>
+                <h3>Developer-First</h3>
+                <p>Built by developers, for developers. Every feature is designed with your workflow in mind, not corporate requirements.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">✨</div>
+                <h3>Simplicity</h3>
+                <p>Powerful features with an intuitive interface. Complexity is hidden, functionality is exposed. No steep learning curve.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>Your data belongs to you. Local-first architecture with optional cloud sync. We never sell your information.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h3>Performance</h3>
+                <p>Native macOS application built for speed. No web app lag, no performance compromises. Lightning fast on Apple Silicon.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Focus</h3>
+                <p>We do one thing exceptionally well: technical documentation. No feature bloat, no distractions from our core mission.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>We listen to our community and continuously improve. Your feedback shapes the future of Devscribe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+        <h2>What Makes Devscribe Different</h2>
+        <p><strong>All-in-One Solution:</strong> Unlike competitors that focus on one aspect (just diagramming, just code execution, or just documentation), Devscribe brings everything together in a seamless experience.</p>
+        <p><strong>Executable Documentation:</strong> Your documentation isn't static—code blocks run, APIs test, databases query. Documentation that actually works.</p>
+        <p><strong>Native macOS:</strong> Built specifically for macOS with Apple Silicon optimization. Not a web app wrapped in Electron.</p>
+        <p><strong>No Lock-in:</strong> Your documents are saved in an open .ds format. Export anytime, no proprietary formats trapping your content.</p>
+        <p><strong>Free Forever:</strong> Core features remain free always. We monetize through optional premium features, not by limiting essential functionality.</p>
+    </section>
+
+    <section class="section">
+        <h2>The Road Ahead</h2>
+        <p>We're just getting started. Our roadmap includes:</p>
+        <ul style="color: var(--gray); margin-left: 2rem; font-size: 1.1rem;">
+            <li style="margin-bottom: 1rem;"><strong>Cloud Sync (Coming Soon):</strong> Seamlessly sync your documents across all your Macs</li>
+            <li style="margin-bottom: 1rem;"><strong>Team Collaboration:</strong> Real-time collaboration for teams working on documentation together</li>
+            <li style="margin-bottom: 1rem;"><strong>More Languages:</strong> Support for Go, Rust, PHP, and more programming languages</li>
+            <li style="margin-bottom: 1rem;"><strong>Export Options:</strong> PDF, HTML, and Markdown export for sharing documentation</li>
+            <li style="margin-bottom: 1rem;"><strong>Plugin System:</strong> Extend Devscribe with community-built plugins</li>
+        </ul>
+        <p style="margin-top: 2rem;">Want to influence our roadmap? Join our community and share your ideas!</p>
+    </section>
+
+    <section class="cta-section">
+        <h2>Join Us on This Journey</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Help us build the best documentation tool for developers worldwide</p>
+        <a href="/download.html" class="btn-white">Download Devscribe for Free</a>
+        <p style="margin-top: 2rem; opacity: 0.9;">macOS 11.0 or later • Free Forever</p>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="/features.html">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/download.html">Download</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="/docs/">Getting Started</a>
+                <a href="/blog/">Blog</a>
+                <a href="/docs/tutorials/">Tutorials</a>
+                <a href="/support.html">Support</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="/about.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="https://twitter.com/devscribe" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://linkedin.com/company/devscribe" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/devscribe" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:hello@devscribe.app">Email Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+        </div>
+    </footer>
+</body>
+</html>
