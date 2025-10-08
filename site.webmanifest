@@ -4,14 +4,14 @@
   "description": "All-in-one documentation editor for developers on macOS",
   "icons": [
     {
-      "src": "/images/devscribe-logo.png",
+      "src": "/images/devscribe-logo.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/images/devscribe-logo.png",
+      "src": "/images/devscribe-logo.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ],
   "theme_color": "#2563eb",

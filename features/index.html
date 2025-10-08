@@ -31,10 +31,24 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/devscribe-logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/devscribe-logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/devscribe-logo.png" />
-    <link rel="shortcut icon" href="/images/devscribe-logo.png" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      sizes="32x32"
+      href="/images/devscribe-logo.jpg"
+    />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      sizes="16x16"
+      href="/images/devscribe-logo.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/devscribe-logo.jpg"
+    />
+    <link rel="shortcut icon" href="/images/devscribe-logo.jpg" />
 
     <style>
       * {
@@ -441,57 +455,60 @@
     <section class="feature-section">
       <div class="feature-content">
         <div class="feature-text">
-          <h2>Built-in SQL Database Support</h2>
+          <h2>Connect to Any SQL Database</h2>
           <p>
-            Pre-configured with the Sakila demo database for practicing MySQL
-            queries, plus SQLite support for creating custom databases directly
-            in your documents.
+            Connect to any SQL database running locally or on a server, and
+            execute queries directly within your documentation. View results in
+            beautiful tabular format—perfect for database documentation and
+            testing.
           </p>
 
           <ul class="feature-list">
             <li>
-              <strong>Sakila Demo Database</strong> - Pre-loaded MySQL sample
-              database
+              <strong>Connect Any Database</strong> - MySQL, PostgreSQL, SQLite,
+              or any SQL database (local or remote)
             </li>
             <li>
-              <strong>SQLite Support</strong> - Create and query your own
-              databases
+              <strong>Live Query Execution</strong> - Run SELECT, INSERT,
+              UPDATE, DELETE queries in real-time
             </li>
             <li>
-              <strong>Table View</strong> - Results displayed in formatted
-              tables
+              <strong>Tabular Results</strong> - View query results in
+              beautifully formatted tables
             </li>
             <li>
               <strong>JSON View Toggle</strong> - Switch between table and JSON
-              formats
+              formats instantly
             </li>
             <li>
-              <strong>Multiple Queries</strong> - Run CREATE, INSERT, SELECT
-              statements
-            </li>
-            <li>
-              <strong>Perfect for Learning</strong> - Practice SQL with real
-              databases
+              <strong>Database Documentation</strong> - Document schema,
+              queries, and results in one place
             </li>
           </ul>
 
           <p>
-            Essential for database designers, backend developers, and students
-            learning SQL.
+            Perfect for database administrators, backend developers, and
+            technical writers who need to document database schemas, test
+            queries, and share results—all within their documentation.
           </p>
         </div>
         <div class="feature-image">
           <div class="code-example">
-            <span style="color: #64748b">-- Sakila Database Query</span>
-            SELECT c.first_name, c.last_name, f.title FROM customer c JOIN
-            rental r ON c.customer_id = r.customer_id JOIN inventory i ON
-            r.inventory_id = i.inventory_id JOIN film f ON i.film_id = f.film_id
-            LIMIT 5;
+            <span style="color: #64748b">-- Connect to your database</span>
+            <span style="color: #f59e0b">@dbHost</span> = localhost:3306
+            <span style="color: #f59e0b">@dbName</span> = production_db
 
-            <span style="color: #64748b">-- SQLite Example</span>
-            CREATE TABLE employees ( id INTEGER PRIMARY KEY, name TEXT,
-            department TEXT ); INSERT INTO employees (name, department) VALUES
-            ('Alice', 'Engineering'); SELECT * FROM employees;
+            <span style="color: #64748b">-- Run queries and see results</span>
+            SELECT u.id, u.name, u.email, COUNT(o.id) as orders FROM users u
+            LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at >=
+            '2025-01-01' GROUP BY u.id ORDER BY orders DESC LIMIT 10;
+
+            <span style="color: #64748b"
+              >-- Results displayed in table format</span
+            >
+            <span style="color: #10b981"
+              >✓ Query executed successfully (10 rows)</span
+            >
           </div>
         </div>
       </div>
