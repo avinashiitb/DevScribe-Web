@@ -1,423 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation - Devscribe | Getting Started Guide & Tutorials</title>
-    <meta name="description" content="Complete Devscribe documentation. Learn how to use code execution, create diagrams, test APIs, and master all features. Step-by-step guides and tutorials for macOS.">
-    <meta name="keywords" content="devscribe documentation, user guide, tutorials, how to use devscribe, code execution guide, diagramming tutorial">
-    <link rel="canonical" href="https://devscribe.app/docs/">
-    
-    <meta property="og:title" content="Devscribe Documentation & Tutorials">
-    <meta property="og:description" content="Learn everything about Devscribe with our comprehensive documentation and tutorials.">
-    <meta property="og:url" content="https://devscribe.app/docs/">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+    <meta
+      name="description"
+      content="Complete Devscribe documentation. Learn how to use code execution, create diagrams, test APIs, and master all features. Step-by-step guides and tutorials for macOS."
+    />
+    <meta
+      name="keywords"
+      content="devscribe documentation, user guide, tutorials, how to use devscribe, code execution guide, diagramming tutorial"
+    />
+    <link rel="canonical" href="https://devscribe.app/docs/" />
+
+    <meta property="og:title" content="Devscribe Documentation & Tutorials" />
+    <meta
+      property="og:description"
+      content="Learn everything about Devscribe with our comprehensive documentation and tutorials."
+    />
+    <meta property="og:url" content="https://devscribe.app/docs/" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        
-        :root {
-            --primary: #2563eb;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --light: #f8fafc;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-        }
+      :root {
+        --primary: #2563eb;
+        --secondary: #10b981;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light: #f8fafc;
+      }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+      }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .nav-links {display: flex; gap: 2rem; list-style: none;}
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {color: var(--primary);}
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
 
-        .cta-btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
 
-        .header {
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
+      .cta-btn {
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+      }
 
-        .header h1 {font-size: 3.5rem; margin-bottom: 1rem;}
-        .header p {font-size: 1.3rem; opacity: 0.95;}
+      .header {
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
 
+      .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      .header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+      }
+
+      .docs-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 3rem;
+        padding: 3rem 2rem;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+      }
+
+      .sidebar h3 {
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+      .sidebar li {
+        margin-bottom: 0.5rem;
+      }
+      .sidebar a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .sidebar a:hover {
+        color: var(--primary);
+      }
+
+      .docs-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--dark);
+      }
+
+      .doc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .doc-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .doc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .doc-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .doc-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .doc-card p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+
+      .doc-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 968px) {
         .docs-container {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 3rem;
-            padding: 3rem 2rem;
+          grid-template-columns: 1fr;
         }
-
         .sidebar {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
+          position: static;
         }
-
-        .sidebar h3 {
-            margin-bottom: 1rem;
-            color: var(--dark);
+        .nav-links {
+          display: none;
         }
-
-        .sidebar ul {list-style: none;}
-        .sidebar li {margin-bottom: 0.5rem;}
-        .sidebar a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .sidebar a:hover {color: var(--primary);}
-
-        .docs-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
-        }
-
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .doc-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .doc-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .doc-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .doc-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .doc-card p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .doc-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 968px) {
-            .docs-container {grid-template-columns: 1fr;}
-            .sidebar {position: static;}
-            .nav-links {display: none;}
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">Devscribe</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/features/">Features</a></li>
-                <li><a href="/blog/">Pricing</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/docs/" class="active">Documentation</a></li>
-            </ul>
-            <a href="/download/" class="cta-btn">Download for Mac</a>
-        </div>
+      <div class="nav-container">
+        <a href="/" class="logo">Devscribe</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/docs/" class="active">Documentation</a></li>
+        </ul>
+        <a href="/download/" class="cta-btn">Download for Mac</a>
+      </div>
     </nav>
 
     <header class="header">
-        <h1>Documentation</h1>
-        <p>Everything you need to master Devscribe</p>
+      <h1>Documentation</h1>
+      <p>Everything you need to master Devscribe</p>
     </header>
 
     <div class="docs-container">
-        <aside class="sidebar">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#code-execution">Code Execution</a></li>
-                <li><a href="#diagramly">Diagramly Tool</a></li>
-                <li><a href="#api-testing">API Testing</a></li>
-                <li><a href="#sql-database">SQL & Databases</a></li>
-                <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
-                <li><a href="#faq">FAQ</a></li>
+      <aside class="sidebar">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#code-execution">Code Execution</a></li>
+          <li><a href="#diagramly">Diagramly Tool</a></li>
+          <li><a href="#api-testing">API Testing</a></li>
+          <li><a href="#sql-database">SQL & Databases</a></li>
+          <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </aside>
+
+      <main class="docs-content">
+        <h2>Getting Started with Devscribe</h2>
+        <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 2rem">
+          Welcome to Devscribe! This comprehensive guide will help you get up
+          and running in minutes.
+        </p>
+
+        <div class="doc-grid">
+          <div class="doc-card">
+            <div class="doc-icon">🚀</div>
+            <h3>Installation</h3>
+            <p>
+              Download, install, and launch Devscribe on macOS. System
+              requirements and setup guide.
+            </p>
+            <a href="/download/">Download & Install →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">📝</div>
+            <h3>First Document</h3>
+            <p>
+              Create your first document, explore the interface, and learn basic
+              navigation and commands.
+            </p>
+            <a href="#">Read Guide →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">⚡</div>
+            <h3>Code Execution</h3>
+            <p>
+              Run JavaScript, TypeScript, Java, Python, and SQL code directly in
+              your documents with live output.
+            </p>
+            <a href="#">Learn More →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🎨</div>
+            <h3>Diagramly Basics</h3>
+            <p>
+              Create your first diagram with the built-in visual design tool.
+              ERD, UML, HLD, and DSA diagrams.
+            </p>
+            <a href="#">Start Diagramming →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🗄️</div>
+            <h3>SQL & Databases</h3>
+            <p>
+              Use Sakila demo database for MySQL queries or create SQLite
+              databases for practice and testing.
+            </p>
+            <a href="#">Database Guide →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🔌</div>
+            <h3>API Documentation</h3>
+            <p>
+              Document and test REST APIs with environment variables, headers,
+              and response formatting.
+            </p>
+            <a href="#">API Testing Guide →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">⌨️</div>
+            <h3>Keyboard Shortcuts</h3>
+            <p>
+              Master keyboard shortcuts to boost your productivity and navigate
+              Devscribe like a pro.
+            </p>
+            <a href="#">View Shortcuts →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">💾</div>
+            <h3>Import & Export</h3>
+            <p>
+              Learn how to import .ds files and export your documents with all
+              diagrams, code, and APIs intact.
+            </p>
+            <a href="#">Export Guide →</a>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🧩</div>
+            <h3>DSA Visualizations</h3>
+            <p>
+              Create visual representations of stacks, queues, linked lists,
+              arrays, and matrices for teaching.
+            </p>
+            <a href="#">Visualization Guide →</a>
+          </div>
+        </div>
+
+        <section id="getting-started" style="margin-top: 4rem">
+          <h2>Quick Start Guide</h2>
+          <div
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 15px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <h3 style="color: var(--primary); margin-bottom: 1rem">
+              Step 1: Download & Install
+            </h3>
+            <p style="color: var(--gray); margin-bottom: 2rem">
+              Download Devscribe from our website and drag it to your
+              Applications folder. Launch the app and grant necessary
+              permissions if prompted.
+            </p>
+
+            <h3 style="color: var(--primary); margin-bottom: 1rem">
+              Step 2: Create Your First Document
+            </h3>
+            <p style="color: var(--gray); margin-bottom: 2rem">
+              Click "New Document" or press Cmd+N. Type "/" to open the command
+              menu and explore all available blocks and features.
+            </p>
+
+            <h3 style="color: var(--primary); margin-bottom: 1rem">
+              Step 3: Explore Features
+            </h3>
+            <p style="color: var(--gray); margin-bottom: 1rem">
+              Try these commands to get started:
+            </p>
+            <ul
+              style="color: var(--gray); margin-left: 2rem; margin-bottom: 2rem"
+            >
+              <li>
+                <strong>/code</strong> - Insert a code block (choose language)
+              </li>
+              <li>
+                <strong>/diagram</strong> - Create a diagram with Diagramly
+              </li>
+              <li><strong>/api</strong> - Add API documentation block</li>
+              <li><strong>/sql</strong> - Insert SQL query block</li>
+              <li><strong>/heading</strong> - Add section headings</li>
             </ul>
-        </aside>
 
-        <main class="docs-content">
-            <h2>Getting Started with Devscribe</h2>
-            <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 2rem;">Welcome to Devscribe! This comprehensive guide will help you get up and running in minutes.</p>
+            <h3 style="color: var(--primary); margin-bottom: 1rem">
+              Step 4: Run Your Code
+            </h3>
+            <p style="color: var(--gray)">
+              Click the "Run" button (▶) on any code block to execute it.
+              Results appear instantly in the console output area below the
+              code.
+            </p>
+          </div>
+        </section>
 
-            <div class="doc-grid">
-                <div class="doc-card">
-                    <div class="doc-icon">🚀</div>
-                    <h3>Installation</h3>
-                    <p>Download, install, and launch Devscribe on macOS. System requirements and setup guide.</p>
-                    <a href="/download/">Download & Install →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">📝</div>
-                    <h3>First Document</h3>
-                    <p>Create your first document, explore the interface, and learn basic navigation and commands.</p>
-                    <a href="#">Read Guide →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">⚡</div>
-                    <h3>Code Execution</h3>
-                    <p>Run JavaScript, TypeScript, Java, Python, and SQL code directly in your documents with live output.</p>
-                    <a href="#">Learn More →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🎨</div>
-                    <h3>Diagramly Basics</h3>
-                    <p>Create your first diagram with the built-in visual design tool. ERD, UML, HLD, and DSA diagrams.</p>
-                    <a href="#">Start Diagramming →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🗄️</div>
-                    <h3>SQL & Databases</h3>
-                    <p>Use Sakila demo database for MySQL queries or create SQLite databases for practice and testing.</p>
-                    <a href="#">Database Guide →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🔌</div>
-                    <h3>API Documentation</h3>
-                    <p>Document and test REST APIs with environment variables, headers, and response formatting.</p>
-                    <a href="#">API Testing Guide →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">⌨️</div>
-                    <h3>Keyboard Shortcuts</h3>
-                    <p>Master keyboard shortcuts to boost your productivity and navigate Devscribe like a pro.</p>
-                    <a href="#">View Shortcuts →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">💾</div>
-                    <h3>Import & Export</h3>
-                    <p>Learn how to import .ds files and export your documents with all diagrams, code, and APIs intact.</p>
-                    <a href="#">Export Guide →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🧩</div>
-                    <h3>DSA Visualizations</h3>
-                    <p>Create visual representations of stacks, queues, linked lists, arrays, and matrices for teaching.</p>
-                    <a href="#">Visualization Guide →</a>
-                </div>
+        <section id="shortcuts" style="margin-top: 4rem">
+          <h2>Keyboard Shortcuts</h2>
+          <div
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 15px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+              "
+            >
+              <div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem">
+                  Document
+                </h3>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + N</kbd
+                  >
+                  New Document
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + S</kbd
+                  >
+                  Save
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + O</kbd
+                  >
+                  Open
+                </p>
+              </div>
+              <div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem">
+                  Editing
+                </h3>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >/</kbd
+                  >
+                  Command Menu
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + D</kbd
+                  >
+                  New Diagram
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + K</kbd
+                  >
+                  Insert Link
+                </p>
+              </div>
+              <div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem">Code</h3>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + Enter</kbd
+                  >
+                  Run Code
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Cmd + /</kbd
+                  >
+                  Toggle Comment
+                </p>
+                <p style="color: var(--gray)">
+                  <kbd
+                    style="
+                      background: #e2e8f0;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 4px;
+                      font-family: monospace;
+                    "
+                    >Tab</kbd
+                  >
+                  Indent
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <section id="getting-started" style="margin-top: 4rem;">
-                <h2>Quick Start Guide</h2>
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Step 1: Download & Install</h3>
-                    <p style="color: var(--gray); margin-bottom: 2rem;">Download Devscribe from our website and drag it to your Applications folder. Launch the app and grant necessary permissions if prompted.</p>
-
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Step 2: Create Your First Document</h3>
-                    <p style="color: var(--gray); margin-bottom: 2rem;">Click "New Document" or press Cmd+N. Type "/" to open the command menu and explore all available blocks and features.</p>
-
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Step 3: Explore Features</h3>
-                    <p style="color: var(--gray); margin-bottom: 1rem;">Try these commands to get started:</p>
-                    <ul style="color: var(--gray); margin-left: 2rem; margin-bottom: 2rem;">
-                        <li><strong>/code</strong> - Insert a code block (choose language)</li>
-                        <li><strong>/diagram</strong> - Create a diagram with Diagramly</li>
-                        <li><strong>/api</strong> - Add API documentation block</li>
-                        <li><strong>/sql</strong> - Insert SQL query block</li>
-                        <li><strong>/heading</strong> - Add section headings</li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Step 4: Run Your Code</h3>
-                    <p style="color: var(--gray);">Click the "Run" button (▶) on any code block to execute it. Results appear instantly in the console output area below the code.</p>
-                </div>
-            </section>
-
-            <section id="shortcuts" style="margin-top: 4rem;">
-                <h2>Keyboard Shortcuts</h2>
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                        <div>
-                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Document</h3>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + N</kbd> New Document</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + S</kbd> Save</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + O</kbd> Open</p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Editing</h3>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">/</kbd> Command Menu</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + D</kbd> New Diagram</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + K</kbd> Insert Link</p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Code</h3>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + Enter</kbd> Run Code</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Cmd + /</kbd> Toggle Comment</p>
-                            <p style="color: var(--gray);"><kbd style="background: #e2e8f0; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Tab</kbd> Indent</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="faq" style="margin: 4rem 0;">
-                <h2>Frequently Asked Questions</h2>
-                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">How do I run code in multiple languages?</h3>
-                        <p style="color: var(--gray);">Type <code>/code</code>, select your language (JavaScript, TypeScript, Java, Python, or SQL), write your code, and click the Run button or press Cmd+Enter.</p>
-                    </div>
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Where are my documents saved?</h3>
-                        <p style="color: var(--gray);">By default, documents are saved locally on your Mac. You can choose the save location when creating a new document. Pro version (coming soon) will offer cloud sync.</p>
-                    </div>
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Can I export my diagrams as images?</h3>
-                        <p style="color: var(--gray);">Yes! Right-click on any diagram and select "Export as PNG" or "Export as SVG" to save it as an image file.</p>
-                    </div>
-                    <div style="margin-bottom: 2rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">How do I use the Sakila database?</h3>
-                        <p style="color: var(--gray);">Create an SQL block, select "MySQL (Sakila)" as the database, and write your query. The Sakila sample database is pre-configured and ready to use.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">What is the @baseUrl feature?</h3>
-                        <p style="color: var(--gray);">Define <code>@baseUrl = https://api.example.com</code> once in your document, then use <code>{{baseUrl}}</code> in all your API requests. Perfect for switching between dev/staging/production environments.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <section id="faq" style="margin: 4rem 0">
+          <h2>Frequently Asked Questions</h2>
+          <div
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 15px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div style="margin-bottom: 2rem">
+              <h3 style="color: var(--primary); margin-bottom: 0.5rem">
+                How do I run code in multiple languages?
+              </h3>
+              <p style="color: var(--gray)">
+                Type <code>/code</code>, select your language (JavaScript,
+                TypeScript, Java, Python, or SQL), write your code, and click
+                the Run button or press Cmd+Enter.
+              </p>
+            </div>
+            <div style="margin-bottom: 2rem">
+              <h3 style="color: var(--primary); margin-bottom: 0.5rem">
+                Where are my documents saved?
+              </h3>
+              <p style="color: var(--gray)">
+                By default, documents are saved locally on your Mac. You can
+                choose the save location when creating a new document. Pro
+                version (coming soon) will offer cloud sync.
+              </p>
+            </div>
+            <div style="margin-bottom: 2rem">
+              <h3 style="color: var(--primary); margin-bottom: 0.5rem">
+                Can I export my diagrams as images?
+              </h3>
+              <p style="color: var(--gray)">
+                Yes! Right-click on any diagram and select "Export as PNG" or
+                "Export as SVG" to save it as an image file.
+              </p>
+            </div>
+            <div style="margin-bottom: 2rem">
+              <h3 style="color: var(--primary); margin-bottom: 0.5rem">
+                How do I use the Sakila database?
+              </h3>
+              <p style="color: var(--gray)">
+                Create an SQL block, select "MySQL (Sakila)" as the database,
+                and write your query. The Sakila sample database is
+                pre-configured and ready to use.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--primary); margin-bottom: 0.5rem">
+                What is the @baseUrl feature?
+              </h3>
+              <p style="color: var(--gray)">
+                Define <code>@baseUrl = https://api.example.com</code> once in
+                your document, then use <code>{{baseUrl}}</code> in all your API
+                requests. Perfect for switching between dev/staging/production
+                environments.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Product</h4>
-                <a href="/features/">Features</a>
-                <a href="/blog/">Pricing</a>
-                <a href="/download/">Download</a>
-                <a href="/docs/">Documentation</a>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <a href="/docs/">Getting Started</a>
-                <a href="/blog/">Blog</a>
-                <a href="/docs/tutorials/">Tutorials</a>
-                <a href="/docs/">Support</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="/about/">About Us</a>
-                <a href="/docs/">Contact</a>
-                <a href="/docs/">Privacy Policy</a>
-                <a href="/docs/">Terms of Service</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <a href="https://twitter.com/devscribe" target="_blank" rel="noopener">Twitter</a>
-                <a href="https://linkedin.com/company/devscribe" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/devscribe" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:hello@devscribe.app">Email Us</a>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="/features/">Features</a>
+          <a href="/download/">Download</a>
+          <a href="/docs/">Documentation</a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="/docs/">Getting Started</a>
+          <a href="/blog/">Blog</a>
+          <a href="/docs/tutorials/">Tutorials</a>
+          <a href="/docs/">Support</a>
         </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+          <a href="/docs/">Contact</a>
+          <a href="/docs/">Privacy Policy</a>
+          <a href="/docs/">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="https://twitter.com/devscribe" target="_blank" rel="noopener"
+            >Twitter</a
+          >
+          <a
+            href="https://linkedin.com/company/devscribe"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/devscribe" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a href="mailto:hello@devscribe.app">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

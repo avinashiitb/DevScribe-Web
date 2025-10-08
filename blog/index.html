@@ -1,440 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Devscribe | Developer Documentation Tips, Tutorials & Best Practices</title>
-    <meta name="description" content="Learn about technical documentation, architecture diagrams, code execution, and developer productivity with Devscribe blog. Tutorials, tips, and best practices for software engineers.">
-    <meta name="keywords" content="technical documentation blog, software architecture tutorials, developer productivity, coding best practices, API documentation tips">
-    <link rel="canonical" href="https://devscribe.app/blog/">
-    
-    <meta property="og:title" content="Devscribe Blog - Developer Documentation & Productivity">
-    <meta property="og:description" content="Tips, tutorials, and best practices for technical documentation and software development.">
-    <meta property="og:url" content="https://devscribe.app/blog/">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Blog - Devscribe | Developer Documentation Tips, Tutorials & Best
+      Practices
+    </title>
+    <meta
+      name="description"
+      content="Learn about technical documentation, architecture diagrams, code execution, and developer productivity with Devscribe blog. Tutorials, tips, and best practices for software engineers."
+    />
+    <meta
+      name="keywords"
+      content="technical documentation blog, software architecture tutorials, developer productivity, coding best practices, API documentation tips"
+    />
+    <link rel="canonical" href="https://devscribe.app/blog/" />
+
+    <meta
+      property="og:title"
+      content="Devscribe Blog - Developer Documentation & Productivity"
+    />
+    <meta
+      property="og:description"
+      content="Tips, tutorials, and best practices for technical documentation and software development."
+    />
+    <meta property="og:url" content="https://devscribe.app/blog/" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --light: #f8fafc;
-        }
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1e40af;
+        --secondary: #10b981;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light: #f8fafc;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+      }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
+
+      .cta-btn {
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .header {
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+      }
+
+      .blog-section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .blog-category {
+        background: #dbeafe;
+        color: var(--primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .blog-date {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .blog-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .blog-card p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+
+      .blog-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .blog-card a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
         }
 
         .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .cta-btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .header {
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .blog-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+          display: none;
         }
 
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+          grid-template-columns: 1fr;
         }
-
-        .blog-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .blog-category {
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .blog-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .blog-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .blog-card p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .blog-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .blog-card a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">Devscribe</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/features/">Features</a></li>
-                <li><a href="/blog/">Pricing</a></li>
-                <li><a href="/blog/" class="active">Blog</a></li>
-                <li><a href="/docs/">Documentation</a></li>
-            </ul>
-            <a href="/download/" class="cta-btn">Download for Mac</a>
-        </div>
+      <div class="nav-container">
+        <a href="/" class="logo">Devscribe</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/blog/" class="active">Blog</a></li>
+          <li><a href="/docs/">Documentation</a></li>
+        </ul>
+        <a href="/download/" class="cta-btn">Download for Mac</a>
+      </div>
     </nav>
 
     <header class="header">
-        <h1>Devscribe Blog</h1>
-        <p>Tips, tutorials, and best practices for technical documentation and development</p>
+      <h1>Devscribe Blog</h1>
+      <p>
+        Tips, tutorials, and best practices for technical documentation and
+        development
+      </p>
     </header>
 
     <section class="blog-section">
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-image">📚</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Best Practices</span>
-                        <span class="blog-date">October 15, 2025</span>
-                    </div>
-                    <h3>Why Technical Documentation Matters More Than Ever</h3>
-                    <p>Explore the importance of maintaining comprehensive technical documentation in modern software development and how it impacts team productivity, onboarding, and project success.</p>
-                    <a href="/blog/technical-documentation-importance/">Read More →</a>
-                </div>
-            </article>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">📚</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Best Practices</span>
+              <span class="blog-date">October 15, 2025</span>
+            </div>
+            <h3>Why Technical Documentation Matters More Than Ever</h3>
+            <p>
+              Explore the importance of maintaining comprehensive technical
+              documentation in modern software development and how it impacts
+              team productivity, onboarding, and project success.
+            </p>
+            <a href="/blog/technical-documentation-importance/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🏗️</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Architecture</span>
-                        <span class="blog-date">October 10, 2025</span>
-                    </div>
-                    <h3>Best Practices for Creating LLD and HLD Diagrams</h3>
-                    <p>Learn the fundamentals of low-level and high-level design documentation for software architecture with practical examples and templates you can use.</p>
-                    <a href="/blog/lld-hld-best-practices/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🏗️</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Architecture</span>
+              <span class="blog-date">October 10, 2025</span>
+            </div>
+            <h3>Best Practices for Creating LLD and HLD Diagrams</h3>
+            <p>
+              Learn the fundamentals of low-level and high-level design
+              documentation for software architecture with practical examples
+              and templates you can use.
+            </p>
+            <a href="/blog/lld-hld-best-practices/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🚀</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Industry Trends</span>
-                        <span class="blog-date">October 5, 2025</span>
-                    </div>
-                    <h3>The Future of Developer Tools: All-in-One Solutions</h3>
-                    <p>How integrated development environments are evolving to meet modern developer needs and why consolidation matters for productivity.</p>
-                    <a href="/blog/future-developer-tools/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🚀</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Industry Trends</span>
+              <span class="blog-date">October 5, 2025</span>
+            </div>
+            <h3>The Future of Developer Tools: All-in-One Solutions</h3>
+            <p>
+              How integrated development environments are evolving to meet
+              modern developer needs and why consolidation matters for
+              productivity.
+            </p>
+            <a href="/blog/future-developer-tools/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">💻</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Development</span>
-                        <span class="blog-date">September 28, 2025</span>
-                    </div>
-                    <h3>Code Documentation: Beyond Comments</h3>
-                    <p>Discover advanced techniques for documenting your code effectively, including executable documentation, live examples, and interactive code snippets.</p>
-                    <a href="/blog/code-documentation-beyond-comments/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">💻</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Development</span>
+              <span class="blog-date">September 28, 2025</span>
+            </div>
+            <h3>Code Documentation: Beyond Comments</h3>
+            <p>
+              Discover advanced techniques for documenting your code
+              effectively, including executable documentation, live examples,
+              and interactive code snippets.
+            </p>
+            <a href="/blog/code-documentation-beyond-comments/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🔌</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">APIs</span>
-                        <span class="blog-date">September 20, 2025</span>
-                    </div>
-                    <h3>API Documentation Best Practices with OpenAPI</h3>
-                    <p>Master the art of API documentation using OpenAPI specifications and learn how to create developer-friendly API docs that developers actually want to use.</p>
-                    <a href="/blog/api-documentation-openapi/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🔌</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">APIs</span>
+              <span class="blog-date">September 20, 2025</span>
+            </div>
+            <h3>API Documentation Best Practices with OpenAPI</h3>
+            <p>
+              Master the art of API documentation using OpenAPI specifications
+              and learn how to create developer-friendly API docs that
+              developers actually want to use.
+            </p>
+            <a href="/blog/api-documentation-openapi/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🎨</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Design</span>
-                        <span class="blog-date">September 15, 2025</span>
-                    </div>
-                    <h3>Building Better Software Architecture Diagrams</h3>
-                    <p>A comprehensive guide to creating clear, informative architecture diagrams that communicate design decisions effectively to both technical and non-technical stakeholders.</p>
-                    <a href="/blog/better-architecture-diagrams/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🎨</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Design</span>
+              <span class="blog-date">September 15, 2025</span>
+            </div>
+            <h3>Building Better Software Architecture Diagrams</h3>
+            <p>
+              A comprehensive guide to creating clear, informative architecture
+              diagrams that communicate design decisions effectively to both
+              technical and non-technical stakeholders.
+            </p>
+            <a href="/blog/better-architecture-diagrams/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🗄️</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Database</span>
-                        <span class="blog-date">September 8, 2025</span>
-                    </div>
-                    <h3>Database Schema Documentation: ERD Best Practices</h3>
-                    <p>Learn how to create professional entity-relationship diagrams that clearly communicate your database design, relationships, and constraints.</p>
-                    <a href="/blog/database-erd-best-practices/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🗄️</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Database</span>
+              <span class="blog-date">September 8, 2025</span>
+            </div>
+            <h3>Database Schema Documentation: ERD Best Practices</h3>
+            <p>
+              Learn how to create professional entity-relationship diagrams that
+              clearly communicate your database design, relationships, and
+              constraints.
+            </p>
+            <a href="/blog/database-erd-best-practices/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">🎓</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Education</span>
-                        <span class="blog-date">September 1, 2025</span>
-                    </div>
-                    <h3>Teaching Programming with Executable Documentation</h3>
-                    <p>How educators can use interactive code execution and visual diagrams to create more engaging and effective programming tutorials and courses.</p>
-                    <a href="/blog/teaching-with-executable-docs/">Read More →</a>
-                </div>
-            </article>
+        <article class="blog-card">
+          <div class="blog-image">🎓</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Education</span>
+              <span class="blog-date">September 1, 2025</span>
+            </div>
+            <h3>Teaching Programming with Executable Documentation</h3>
+            <p>
+              How educators can use interactive code execution and visual
+              diagrams to create more engaging and effective programming
+              tutorials and courses.
+            </p>
+            <a href="/blog/teaching-with-executable-docs/">Read More →</a>
+          </div>
+        </article>
 
-            <article class="blog-card">
-                <div class="blog-image">⚡</div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Productivity</span>
-                        <span class="blog-date">August 25, 2025</span>
-                    </div>
-                    <h3>5 Ways to Boost Developer Productivity with Better Documentation</h3>
-                    <p>Practical tips for improving team efficiency through better documentation practices, code examples, and visual aids.</p>
-                    <a href="/blog/boost-productivity-documentation/">Read More →</a>
-                </div>
-            </article>
-        </div>
+        <article class="blog-card">
+          <div class="blog-image">⚡</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Productivity</span>
+              <span class="blog-date">August 25, 2025</span>
+            </div>
+            <h3>
+              5 Ways to Boost Developer Productivity with Better Documentation
+            </h3>
+            <p>
+              Practical tips for improving team efficiency through better
+              documentation practices, code examples, and visual aids.
+            </p>
+            <a href="/blog/boost-productivity-documentation/">Read More →</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Product</h4>
-                <a href="/features/">Features</a>
-                <a href="/blog/">Pricing</a>
-                <a href="/download/">Download</a>
-                <a href="/docs/">Documentation</a>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <a href="/docs/">Getting Started</a>
-                <a href="/blog/">Blog</a>
-                <a href="/docs/tutorials/">Tutorials</a>
-                <a href="/docs/">Support</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="/about/">About Us</a>
-                <a href="/docs/">Contact</a>
-                <a href="/docs/">Privacy Policy</a>
-                <a href="/docs/">Terms of Service</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <a href="https://twitter.com/devscribe" target="_blank" rel="noopener">Twitter</a>
-                <a href="https://linkedin.com/company/devscribe" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/devscribe" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:hello@devscribe.app">Email Us</a>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="/features/">Features</a>
+          <a href="/download/">Download</a>
+          <a href="/docs/">Documentation</a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="/docs/">Getting Started</a>
+          <a href="/blog/">Blog</a>
+          <a href="/docs/tutorials/">Tutorials</a>
+          <a href="/docs/">Support</a>
         </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+          <a href="/docs/">Contact</a>
+          <a href="/docs/">Privacy Policy</a>
+          <a href="/docs/">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="https://twitter.com/devscribe" target="_blank" rel="noopener"
+            >Twitter</a
+          >
+          <a
+            href="https://linkedin.com/company/devscribe"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/devscribe" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a href="mailto:hello@devscribe.app">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+      </div>
     </footer>
 
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "Devscribe Blog",
         "description": "Tips, tutorials, and best practices for technical documentation and software development",
         "url": "https://devscribe.app/blog/",
         "publisher": {
-            "@type": "Organization",
-            "name": "Devscribe",
-            "url": "https://devscribe.app"
+          "@type": "Organization",
+          "name": "Devscribe",
+          "url": "https://devscribe.app"
         }
-    }
+      }
     </script>
-</body>
+  </body>
 </html>

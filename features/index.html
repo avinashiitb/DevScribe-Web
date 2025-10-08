@@ -1,562 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features - Devscribe | Code Execution, Diagramming & API Testing for macOS</title>
-    <meta name="description" content="Explore Devscribe's powerful features: multi-language code execution (JavaScript, TypeScript, Java, Python, SQL), visual diagramming with Diagramly, API testing, and more. Built for macOS developers.">
-    <meta name="keywords" content="code execution editor, diagram tool, API testing, SQL editor, developer documentation, macOS developer tools, technical writing software">
-    <link rel="canonical" href="https://devscribe.app/features/">
-    
-    <meta property="og:title" content="Devscribe Features - All-in-One Developer Documentation Tool">
-    <meta property="og:description" content="Execute code, create diagrams, test APIs, and document everything in one macOS application.">
-    <meta property="og:url" content="https://devscribe.app/features/">
-    <meta property="og:image" content="https://devscribe.app/images/features-og.jpg">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Features - Devscribe | Code Execution, Diagramming & API Testing for macOS
+    </title>
+    <meta
+      name="description"
+      content="Explore Devscribe's powerful features: multi-language code execution (JavaScript, TypeScript, Java, Python, SQL), visual diagramming with Diagramly, API testing, and more. Built for macOS developers."
+    />
+    <meta
+      name="keywords"
+      content="code execution editor, diagram tool, API testing, SQL editor, developer documentation, macOS developer tools, technical writing software"
+    />
+    <link rel="canonical" href="https://devscribe.app/features/" />
+
+    <meta
+      property="og:title"
+      content="Devscribe Features - All-in-One Developer Documentation Tool"
+    />
+    <meta
+      property="og:description"
+      content="Execute code, create diagrams, test APIs, and document everything in one macOS application."
+    />
+    <meta property="og:url" content="https://devscribe.app/features/" />
+    <meta
+      property="og:image"
+      content="https://devscribe.app/images/features-og.jpg"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --light: #f8fafc;
-        }
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1e40af;
+        --secondary: #10b981;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light: #f8fafc;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+      }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
 
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
 
-        .cta-btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
+      .cta-btn {
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
 
-        .cta-btn:hover {
-            background: var(--primary-dark);
-        }
+      .cta-btn:hover {
+        background: var(--primary-dark);
+      }
 
-        .header {
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
+      .header {
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
 
+      .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+      }
+
+      .feature-section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-section:nth-child(even) {
+        background: var(--light);
+      }
+
+      .feature-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .feature-content.reverse {
+        direction: rtl;
+      }
+
+      .feature-content.reverse > * {
+        direction: ltr;
+      }
+
+      .feature-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .feature-text p {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin: 2rem 0;
+      }
+
+      .feature-list li {
+        padding: 0.75rem 0;
+        display: flex;
+        align-items: start;
+        gap: 0.75rem;
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        color: var(--secondary);
+        font-weight: bold;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      .feature-image {
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      .feature-image img {
+        width: 100%;
+        display: block;
+      }
+
+      .code-example {
+        background: #1e293b;
+        color: #10b981;
+        padding: 2rem;
+        border-radius: 10px;
+        font-family: "Monaco", "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn-white {
+        background: white;
+        color: var(--primary);
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 3rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
         .header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .feature-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-section:nth-child(even) {
-            background: var(--light);
+          font-size: 2.5rem;
         }
 
         .feature-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
         .feature-content.reverse {
-            direction: rtl;
+          direction: ltr;
         }
 
-        .feature-content.reverse > * {
-            direction: ltr;
+        .nav-links {
+          display: none;
         }
-
-        .feature-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .feature-text p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .feature-list li {
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: start;
-            gap: 0.75rem;
-        }
-
-        .feature-list li::before {
-            content: "✓";
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .feature-image {
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            overflow: hidden;
-        }
-
-        .feature-image img {
-            width: 100%;
-            display: block;
-        }
-
-        .code-example {
-            background: #1e293b;
-            color: #10b981;
-            padding: 2rem;
-            border-radius: 10px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .feature-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .feature-content.reverse {
-                direction: ltr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">Devscribe</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/features/" class="active">Features</a></li>
-                <li><a href="/blog/">Pricing</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/docs/">Documentation</a></li>
-            </ul>
-            <a href="/download/" class="cta-btn">Download for Mac</a>
-        </div>
+      <div class="nav-container">
+        <a href="/" class="logo">Devscribe</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features/" class="active">Features</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/docs/">Documentation</a></li>
+        </ul>
+        <a href="/download/" class="cta-btn">Download for Mac</a>
+      </div>
     </nav>
 
     <header class="header">
-        <h1>Powerful Features for Modern Developers</h1>
-        <p>Everything you need to document, design, and develop in one macOS application</p>
+      <h1>Powerful Features for Modern Developers</h1>
+      <p>
+        Everything you need to document, design, and develop in one macOS
+        application
+      </p>
     </header>
 
     <!-- Feature 1: Code Execution -->
     <section class="feature-section">
-        <div class="feature-content">
-            <div class="feature-text">
-                <h2>Multi-Language Code Execution</h2>
-                <p>Run code snippets directly inside your documents without any terminal or setup. Execute and test your code instantly with real-time output.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>JavaScript & TypeScript</strong> - Run modern JS/TS code with console output</li>
-                    <li><strong>Java</strong> - Execute Java programs with full console support</li>
-                    <li><strong>Python</strong> - Run Python scripts and see results immediately</li>
-                    <li><strong>SQL</strong> - Query databases with Sakila demo or SQLite</li>
-                    <li><strong>Real-time Output</strong> - See results instantly in console panel</li>
-                    <li><strong>Mix Languages</strong> - Combine multiple languages in one document</li>
-                </ul>
+      <div class="feature-content">
+        <div class="feature-text">
+          <h2>Multi-Language Code Execution</h2>
+          <p>
+            Run code snippets directly inside your documents without any
+            terminal or setup. Execute and test your code instantly with
+            real-time output.
+          </p>
 
-                <p>Perfect for tutorials, testing logic, code demonstrations, and technical documentation with live examples.</p>
-            </div>
-            <div class="feature-image">
-                <div class="code-example">
-<span style="color: #64748b;">// JavaScript Example</span>
-console.log("Welcome to Devscribe!");
+          <ul class="feature-list">
+            <li>
+              <strong>JavaScript & TypeScript</strong> - Run modern JS/TS code
+              with console output
+            </li>
+            <li>
+              <strong>Java</strong> - Execute Java programs with full console
+              support
+            </li>
+            <li>
+              <strong>Python</strong> - Run Python scripts and see results
+              immediately
+            </li>
+            <li>
+              <strong>SQL</strong> - Query databases with Sakila demo or SQLite
+            </li>
+            <li>
+              <strong>Real-time Output</strong> - See results instantly in
+              console panel
+            </li>
+            <li>
+              <strong>Mix Languages</strong> - Combine multiple languages in one
+              document
+            </li>
+          </ul>
 
-function fibonacci(n) {
-  if (n <= 1) return n;
-  return fibonacci(n-1) + fibonacci(n-2);
-}
-
-console.log(fibonacci(8));
-
-<span style="color: #64748b;">// TypeScript Example</span>
-type User = {
-  id: number;
-  name: string;
-};
-
-const user: User = {
-  id: 1,
-  name: "Developer"
-};
-console.log(user);
-                </div>
-            </div>
+          <p>
+            Perfect for tutorials, testing logic, code demonstrations, and
+            technical documentation with live examples.
+          </p>
         </div>
+        <div class="feature-image">
+          <div class="code-example">
+            <span style="color: #64748b">// JavaScript Example</span>
+            console.log("Welcome to Devscribe!"); function fibonacci(n) { if (n
+            <= 1) return n; return fibonacci(n-1) + fibonacci(n-2); }
+            console.log(fibonacci(8));
+
+            <span style="color: #64748b">// TypeScript Example</span>
+            type User = { id: number; name: string; }; const user: User = { id:
+            1, name: "Developer" }; console.log(user);
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Feature 2: Diagramly -->
-    <section class="feature-section" style="background: #f8fafc;">
-        <div class="feature-content reverse">
-            <div class="feature-text">
-                <h2>Diagramly - Visual Design Tool</h2>
-                <p>Built-in diagramming tool for creating professional architecture diagrams, database schemas, and system designs with an intuitive interface.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>Database ERD Diagrams</strong> - Create entity-relationship diagrams with proper cardinality</li>
-                    <li><strong>UML Class Diagrams</strong> - Document object-oriented architecture and relationships</li>
-                    <li><strong>High-Level Design (HLD)</strong> - Design system architectures with AWS components</li>
-                    <li><strong>DSA Visualizations</strong> - Visualize stacks, queues, linked lists, arrays, matrices</li>
-                    <li><strong>Drag-and-Drop Interface</strong> - Easy to use, similar to draw.io</li>
-                    <li><strong>Export as Images</strong> - Save diagrams as PNG for presentations</li>
-                </ul>
+    <section class="feature-section" style="background: #f8fafc">
+      <div class="feature-content reverse">
+        <div class="feature-text">
+          <h2>Diagramly - Visual Design Tool</h2>
+          <p>
+            Built-in diagramming tool for creating professional architecture
+            diagrams, database schemas, and system designs with an intuitive
+            interface.
+          </p>
 
-                <p>Ideal for software architects, backend engineers, and educators who need to visualize complex systems.</p>
-            </div>
-            <div class="feature-image">
-                <img src="/images/erd-diagram.png" alt="Database ERD diagram example showing Users, Orders, Products and OrderItems relationships created in Devscribe Diagramly tool" loading="lazy">
-            </div>
+          <ul class="feature-list">
+            <li>
+              <strong>Database ERD Diagrams</strong> - Create
+              entity-relationship diagrams with proper cardinality
+            </li>
+            <li>
+              <strong>UML Class Diagrams</strong> - Document object-oriented
+              architecture and relationships
+            </li>
+            <li>
+              <strong>High-Level Design (HLD)</strong> - Design system
+              architectures with AWS components
+            </li>
+            <li>
+              <strong>DSA Visualizations</strong> - Visualize stacks, queues,
+              linked lists, arrays, matrices
+            </li>
+            <li>
+              <strong>Drag-and-Drop Interface</strong> - Easy to use, similar to
+              draw.io
+            </li>
+            <li>
+              <strong>Export as Images</strong> - Save diagrams as PNG for
+              presentations
+            </li>
+          </ul>
+
+          <p>
+            Ideal for software architects, backend engineers, and educators who
+            need to visualize complex systems.
+          </p>
         </div>
+        <div class="feature-image">
+          <img
+            src="/images/erd-diagram.png"
+            alt="Database ERD diagram example showing Users, Orders, Products and OrderItems relationships created in Devscribe Diagramly tool"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- Feature 3: SQL Support -->
     <section class="feature-section">
-        <div class="feature-content">
-            <div class="feature-text">
-                <h2>Built-in SQL Database Support</h2>
-                <p>Pre-configured with the Sakila demo database for practicing MySQL queries, plus SQLite support for creating custom databases directly in your documents.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>Sakila Demo Database</strong> - Pre-loaded MySQL sample database</li>
-                    <li><strong>SQLite Support</strong> - Create and query your own databases</li>
-                    <li><strong>Table View</strong> - Results displayed in formatted tables</li>
-                    <li><strong>JSON View Toggle</strong> - Switch between table and JSON formats</li>
-                    <li><strong>Multiple Queries</strong> - Run CREATE, INSERT, SELECT statements</li>
-                    <li><strong>Perfect for Learning</strong> - Practice SQL with real databases</li>
-                </ul>
+      <div class="feature-content">
+        <div class="feature-text">
+          <h2>Built-in SQL Database Support</h2>
+          <p>
+            Pre-configured with the Sakila demo database for practicing MySQL
+            queries, plus SQLite support for creating custom databases directly
+            in your documents.
+          </p>
 
-                <p>Essential for database designers, backend developers, and students learning SQL.</p>
-            </div>
-            <div class="feature-image">
-                <div class="code-example">
-<span style="color: #64748b;">-- Sakila Database Query</span>
-SELECT c.first_name, c.last_name, f.title
-FROM customer c
-JOIN rental r ON c.customer_id = r.customer_id
-JOIN inventory i ON r.inventory_id = i.inventory_id
-JOIN film f ON i.film_id = f.film_id
-LIMIT 5;
+          <ul class="feature-list">
+            <li>
+              <strong>Sakila Demo Database</strong> - Pre-loaded MySQL sample
+              database
+            </li>
+            <li>
+              <strong>SQLite Support</strong> - Create and query your own
+              databases
+            </li>
+            <li>
+              <strong>Table View</strong> - Results displayed in formatted
+              tables
+            </li>
+            <li>
+              <strong>JSON View Toggle</strong> - Switch between table and JSON
+              formats
+            </li>
+            <li>
+              <strong>Multiple Queries</strong> - Run CREATE, INSERT, SELECT
+              statements
+            </li>
+            <li>
+              <strong>Perfect for Learning</strong> - Practice SQL with real
+              databases
+            </li>
+          </ul>
 
-<span style="color: #64748b;">-- SQLite Example</span>
-CREATE TABLE employees (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  department TEXT
-);
-
-INSERT INTO employees (name, department)
-VALUES ('Alice', 'Engineering');
-
-SELECT * FROM employees;
-                </div>
-            </div>
+          <p>
+            Essential for database designers, backend developers, and students
+            learning SQL.
+          </p>
         </div>
+        <div class="feature-image">
+          <div class="code-example">
+            <span style="color: #64748b">-- Sakila Database Query</span>
+            SELECT c.first_name, c.last_name, f.title FROM customer c JOIN
+            rental r ON c.customer_id = r.customer_id JOIN inventory i ON
+            r.inventory_id = i.inventory_id JOIN film f ON i.film_id = f.film_id
+            LIMIT 5;
+
+            <span style="color: #64748b">-- SQLite Example</span>
+            CREATE TABLE employees ( id INTEGER PRIMARY KEY, name TEXT,
+            department TEXT ); INSERT INTO employees (name, department) VALUES
+            ('Alice', 'Engineering'); SELECT * FROM employees;
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Feature 4: API Testing -->
-    <section class="feature-section" style="background: #f8fafc;">
-        <div class="feature-content reverse">
-            <div class="feature-text">
-                <h2>API Documentation & Testing</h2>
-                <p>Document and test REST APIs directly within your documents. No need for Postman or external tools. Support for environment variables and multiple request types.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>Environment Variables</strong> - Define @baseUrl once, use everywhere</li>
-                    <li><strong>All HTTP Methods</strong> - GET, POST, PUT, DELETE, PATCH</li>
-                    <li><strong>Path Parameters</strong> - Dynamic URL parameters support</li>
-                    <li><strong>Query Strings</strong> - Add query parameters easily</li>
-                    <li><strong>Custom Headers</strong> - Set authorization and custom headers</li>
-                    <li><strong>Response Formatting</strong> - View JSON or table format</li>
-                </ul>
+    <section class="feature-section" style="background: #f8fafc">
+      <div class="feature-content reverse">
+        <div class="feature-text">
+          <h2>API Documentation & Testing</h2>
+          <p>
+            Document and test REST APIs directly within your documents. No need
+            for Postman or external tools. Support for environment variables and
+            multiple request types.
+          </p>
 
-                <p>Perfect for API documentation, testing endpoints, and maintaining service documentation alongside code.</p>
-            </div>
-            <div class="feature-image">
-                <div class="code-example">
-<span style="color: #64748b;">// Define base URL once</span>
-<span style="color: #f59e0b;">@baseUrl</span> = https://api.example.com
+          <ul class="feature-list">
+            <li>
+              <strong>Environment Variables</strong> - Define @baseUrl once, use
+              everywhere
+            </li>
+            <li>
+              <strong>All HTTP Methods</strong> - GET, POST, PUT, DELETE, PATCH
+            </li>
+            <li>
+              <strong>Path Parameters</strong> - Dynamic URL parameters support
+            </li>
+            <li>
+              <strong>Query Strings</strong> - Add query parameters easily
+            </li>
+            <li>
+              <strong>Custom Headers</strong> - Set authorization and custom
+              headers
+            </li>
+            <li>
+              <strong>Response Formatting</strong> - View JSON or table format
+            </li>
+          </ul>
 
-<span style="color: #64748b;">// Use in requests</span>
-<span style="color: #10b981;">GET</span> {{baseUrl}}/users/{user_id}
-
-<span style="color: #64748b;">// Response (auto-formatted)</span>
-{
-  "id": 1,
-  "name": "John Doe",
-  "email": "john@example.com"
-}
-
-<span style="color: #64748b;">// Switch environments easily</span>
-<span style="color: #f59e0b;">@baseUrl</span> = https://dev-api.example.com
-                </div>
-            </div>
+          <p>
+            Perfect for API documentation, testing endpoints, and maintaining
+            service documentation alongside code.
+          </p>
         </div>
+        <div class="feature-image">
+          <div class="code-example">
+            <span style="color: #64748b">// Define base URL once</span>
+            <span style="color: #f59e0b">@baseUrl</span> =
+            https://api.example.com
+
+            <span style="color: #64748b">// Use in requests</span>
+            <span style="color: #10b981">GET</span> {{baseUrl}}/users/{user_id}
+
+            <span style="color: #64748b">// Response (auto-formatted)</span>
+            { "id": 1, "name": "John Doe", "email": "john@example.com" }
+
+            <span style="color: #64748b">// Switch environments easily</span>
+            <span style="color: #f59e0b">@baseUrl</span> =
+            https://dev-api.example.com
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Feature 5: Rich Documentation -->
     <section class="feature-section">
-        <div class="feature-content">
-            <div class="feature-text">
-                <h2>Rich Text Documentation</h2>
-                <p>Create comprehensive technical documentation with support for headers, paragraphs, images, videos, tables, code blocks, and more. Everything in one unified document.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>Markdown Support</strong> - Use familiar markdown syntax</li>
-                    <li><strong>Media Embedding</strong> - Add images and videos inline</li>
-                    <li><strong>Tables & Lists</strong> - Organize information clearly</li>
-                    <li><strong>Code Blocks</strong> - Syntax highlighting included</li>
-                    <li><strong>Export Options</strong> - Save as .ds format with all content</li>
-                    <li><strong>Executable Docs</strong> - Mix text with live code and diagrams</li>
-                </ul>
+      <div class="feature-content">
+        <div class="feature-text">
+          <h2>Rich Text Documentation</h2>
+          <p>
+            Create comprehensive technical documentation with support for
+            headers, paragraphs, images, videos, tables, code blocks, and more.
+            Everything in one unified document.
+          </p>
 
-                <p>Ideal for technical writers, documentation teams, and developers who value comprehensive documentation.</p>
-            </div>
-            <div class="feature-image">
-                <img src="/images/documentation-example.png" alt="Rich text documentation example in Devscribe showing headers, code blocks, tables and embedded diagrams" loading="lazy">
-            </div>
+          <ul class="feature-list">
+            <li>
+              <strong>Markdown Support</strong> - Use familiar markdown syntax
+            </li>
+            <li>
+              <strong>Media Embedding</strong> - Add images and videos inline
+            </li>
+            <li>
+              <strong>Tables & Lists</strong> - Organize information clearly
+            </li>
+            <li><strong>Code Blocks</strong> - Syntax highlighting included</li>
+            <li>
+              <strong>Export Options</strong> - Save as .ds format with all
+              content
+            </li>
+            <li>
+              <strong>Executable Docs</strong> - Mix text with live code and
+              diagrams
+            </li>
+          </ul>
+
+          <p>
+            Ideal for technical writers, documentation teams, and developers who
+            value comprehensive documentation.
+          </p>
         </div>
+        <div class="feature-image">
+          <img
+            src="/images/documentation-example.png"
+            alt="Rich text documentation example in Devscribe showing headers, code blocks, tables and embedded diagrams"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- Feature 6: DSA Visualizations -->
-    <section class="feature-section" style="background: #f8fafc;">
-        <div class="feature-content reverse">
-            <div class="feature-text">
-                <h2>Data Structure Visualizations</h2>
-                <p>Visualize common data structures and algorithms with built-in diagram templates. Perfect for teaching computer science concepts and preparing for technical interviews.</p>
-                
-                <ul class="feature-list">
-                    <li><strong>Stack Visualization</strong> - LIFO structure with push/pop operations</li>
-                    <li><strong>Queue Visualization</strong> - FIFO structure representation</li>
-                    <li><strong>Linked Lists</strong> - Single and double linked list diagrams</li>
-                    <li><strong>Arrays & Matrices</strong> - 1D and 2D array representations</li>
-                    <li><strong>Trees & Graphs</strong> - Binary trees and graph structures</li>
-                    <li><strong>Custom Labels</strong> - Add your own data and descriptions</li>
-                </ul>
+    <section class="feature-section" style="background: #f8fafc">
+      <div class="feature-content reverse">
+        <div class="feature-text">
+          <h2>Data Structure Visualizations</h2>
+          <p>
+            Visualize common data structures and algorithms with built-in
+            diagram templates. Perfect for teaching computer science concepts
+            and preparing for technical interviews.
+          </p>
 
-                <p>Essential for educators, students, and anyone teaching or learning algorithms and data structures.</p>
-            </div>
-            <div class="feature-image">
-                <img src="/images/dsa-visualizations.png" alt="Data structure visualizations showing stack, linked list, array and matrix representations in Devscribe" loading="lazy">
-            </div>
+          <ul class="feature-list">
+            <li>
+              <strong>Stack Visualization</strong> - LIFO structure with
+              push/pop operations
+            </li>
+            <li>
+              <strong>Queue Visualization</strong> - FIFO structure
+              representation
+            </li>
+            <li>
+              <strong>Linked Lists</strong> - Single and double linked list
+              diagrams
+            </li>
+            <li>
+              <strong>Arrays & Matrices</strong> - 1D and 2D array
+              representations
+            </li>
+            <li>
+              <strong>Trees & Graphs</strong> - Binary trees and graph
+              structures
+            </li>
+            <li>
+              <strong>Custom Labels</strong> - Add your own data and
+              descriptions
+            </li>
+          </ul>
+
+          <p>
+            Essential for educators, students, and anyone teaching or learning
+            algorithms and data structures.
+          </p>
         </div>
+        <div class="feature-image">
+          <img
+            src="/images/dsa-visualizations.png"
+            alt="Data structure visualizations showing stack, linked list, array and matrix representations in Devscribe"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <h2>Ready to Transform Your Documentation?</h2>
-        <p>Download Devscribe for macOS and experience all features for free</p>
-        <a href="/download/" class="btn-white">Download for macOS</a>
-        <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">macOS 11.0 or later • Free Forever • No Credit Card Required</p>
+      <h2>Ready to Transform Your Documentation?</h2>
+      <p>Download Devscribe for macOS and experience all features for free</p>
+      <a href="/download/" class="btn-white">Download for macOS</a>
+      <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9">
+        macOS 11.0 or later • Free Forever • No Credit Card Required
+      </p>
     </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Product</h4>
-                <a href="/features/">Features</a>
-                <a href="/blog/">Pricing</a>
-                <a href="/download/">Download</a>
-                <a href="/docs/">Documentation</a>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <a href="/docs/">Getting Started</a>
-                <a href="/blog/">Blog</a>
-                <a href="/docs/tutorials/">Tutorials</a>
-                <a href="/docs/">Support</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="/about/">About Us</a>
-                <a href="/docs/">Contact</a>
-                <a href="/docs/">Privacy Policy</a>
-                <a href="/docs/">Terms of Service</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <a href="https://twitter.com/devscribe" target="_blank" rel="noopener">Twitter</a>
-                <a href="https://linkedin.com/company/devscribe" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/devscribe" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:hello@devscribe.app">Email Us</a>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="/features/">Features</a>
+          <a href="/download/">Download</a>
+          <a href="/docs/">Documentation</a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="/docs/">Getting Started</a>
+          <a href="/blog/">Blog</a>
+          <a href="/docs/tutorials/">Tutorials</a>
+          <a href="/docs/">Support</a>
         </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+          <a href="/docs/">Contact</a>
+          <a href="/docs/">Privacy Policy</a>
+          <a href="/docs/">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="https://twitter.com/devscribe" target="_blank" rel="noopener"
+            >Twitter</a
+          >
+          <a
+            href="https://linkedin.com/company/devscribe"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/devscribe" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a href="mailto:hello@devscribe.app">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Devscribe. All rights reserved. Trademark pending.</p>
+      </div>
     </footer>
 
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Devscribe Features",
         "description": "Explore all features of Devscribe: multi-language code execution, visual diagramming, API testing, SQL support, and rich documentation tools for macOS developers.",
         "url": "https://devscribe.app/features/"
-    }
+      }
     </script>
-</body>
+  </body>
 </html>
