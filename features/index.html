@@ -489,23 +489,12 @@
           </p>
         </div>
         <div class="feature-image">
-          <div class="code-example">
-            <span style="color: #64748b">-- Connect to your database</span>
-            <span style="color: #f59e0b">@dbHost</span> = localhost:3306
-            <span style="color: #f59e0b">@dbName</span> = production_db
-
-            <span style="color: #64748b">-- Run queries and see results</span>
-            SELECT u.id, u.name, u.email, COUNT(o.id) as orders FROM users u
-            LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at >=
-            '2025-01-01' GROUP BY u.id ORDER BY orders DESC LIMIT 10;
-
-            <span style="color: #64748b"
-              >-- Results displayed in table format</span
-            >
-            <span style="color: #10b981"
-              >✓ Query executed successfully (10 rows)</span
-            >
-          </div>
+          <img
+            src="/images/sql-database-query-execution.png"
+            alt="SQL database connection and query execution in Devscribe showing MySQL connection, SELECT query with JOIN, and tabular results display"
+            title="Devscribe SQL Database Support - Connect and query MySQL, PostgreSQL, SQLite databases"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
