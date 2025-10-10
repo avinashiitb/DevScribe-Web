@@ -3,217 +3,272 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Devscribe | Built by One, For Many</title>
+    <title>About Devscribe | Built by Developers, for Developers</title>
     <meta
       name="description"
-      content="Devscribe is a humble project built by a single developer to simplify how we write, visualize, and document software. Learn the story behind it and how you can help improve it."
+      content="Devscribe is a humble, all-in-one workspace built by developers, for developers — combining documentation, diagrams, and code execution into a single elegant macOS app."
     />
     <meta
       name="keywords"
-      content="About Devscribe, indie developer, software documentation, all-in-one developer tool, code and design collaboration, open developer tool, macOS developer app"
+      content="about devscribe, developer tools, software documentation, all-in-one editor, macOS developer app, diagramming tool, API documentation, indie developer tool"
     />
-    <meta name="author" content="Avinash Kumar" />
     <link rel="canonical" href="https://devscribe.app/about" />
-
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="About Devscribe | Built by One, For Many"
-    />
-    <meta
-      property="og:description"
-      content="Devscribe is an independent developer tool created by one person to make software documentation and design simpler. Join in with ideas, feedback, or design help."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devscribe.app/about" />
-    <meta
-      property="og:image"
-      content="https://devscribe.app/images/og-about.jpg"
-    />
-
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #2563eb;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light-gray: #f1f5f9;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.8;
-        color: #0f172a;
-        background-color: #f8fafc;
-        margin: 0;
-      }
-
-      main {
-        max-width: 900px;
-        margin: 120px auto;
+          sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
         background: white;
-        border-radius: 12px;
-        padding: 3rem 2.5rem;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
       }
 
-      h1 {
-        font-size: 2.5rem;
-        color: #2563eb;
-        text-align: center;
-        margin-bottom: 1.5rem;
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid #e2e8f0;
       }
 
-      h2 {
-        color: #1e3a8a;
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
         font-size: 1.5rem;
-        margin-top: 2.5rem;
-      }
-
-      p {
-        margin: 1rem 0;
-        color: #334155;
-      }
-
-      .intro {
-        text-align: center;
-        font-size: 1.1rem;
-        color: #475569;
-        margin-bottom: 2.5rem;
-      }
-
-      blockquote {
-        border-left: 4px solid #2563eb;
-        padding-left: 1rem;
-        color: #475569;
-        font-style: italic;
-        margin: 2rem 0;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 3rem;
-        font-size: 0.9rem;
-        color: #94a3b8;
-      }
-
-      a {
-        color: #2563eb;
+        font-weight: 700;
+        color: var(--dark);
         text-decoration: none;
       }
 
-      a:hover {
-        text-decoration: underline;
+      .download-btn {
+        background: var(--dark);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.3s;
       }
 
-      ul {
-        margin: 1rem 0 1rem 1.5rem;
+      .main-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10rem 2rem 6rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: -0.02em;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 3rem 0 1.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        background: var(--light-gray);
+        padding: 2rem;
+        border-radius: 8px;
+        margin: 2rem 0;
       }
 
       @media (max-width: 768px) {
-        main {
-          margin: 100px 1rem;
-          padding: 2rem 1.5rem;
-        }
         h1 {
-          font-size: 2rem;
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 1.1rem;
         }
       }
     </style>
   </head>
-
   <body>
-    <main>
+    <nav>
+      <div class="nav-container">
+        <a href="/" class="logo"
+          >Devscribe<sup style="font-size: 0.5em; margin-left: 2px">™</sup></a
+        >
+        <div style="display: flex; gap: 2rem; align-items: center">
+          <a
+            href="/about"
+            style="color: var(--dark); text-decoration: none; font-weight: 600"
+            >About</a
+          >
+          <a href="/download" class="download-btn">Download for Mac</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-content">
       <h1>About Devscribe</h1>
-      <p class="intro">
-        Hi 👋 I'm <strong>Avinash</strong> — a developer who wanted to make
-        documenting, visualizing, and experimenting with software simpler and
-        more human. Devscribe is something I started alone, out of curiosity and
-        love for clarity.
-      </p>
-
-      <h2>🌱 Why Devscribe Exists</h2>
-      <p>
-        I’ve spent years juggling different tools — editors, API testers,
-        diagram apps, and documentation platforms — just to explain an idea
-        clearly. It always felt unnecessarily complex. Every change meant
-        jumping between five windows.
-      </p>
 
       <p>
-        Devscribe was born to solve that frustration — a single place to
-        **write, visualize, and execute code**. It’s not a company or a startup;
-        it’s a personal effort to build something useful, clean, and calm.
+        Devscribe is a humble, all-in-one workspace built
+        <strong>by developers, for developers</strong>. It brings together
+        documentation, code execution, diagrams, and API testing — all in one
+        elegant macOS app designed to make technical work simpler, faster, and
+        more human.
       </p>
 
-      <blockquote>
-        “I didn’t want to build a product. I wanted to build something I wish I
-        had while learning, teaching, and creating software.”
-      </blockquote>
-
-      <h2>💡 My Goal</h2>
+      <h2>Our Mission</h2>
       <p>
-        Devscribe’s goal is simple — to help developers focus on what truly
-        matters:
-        <em>thinking and building</em>. Every feature, from diagrams to live
-        code execution, is built with simplicity and purpose.
+        Developers today juggle too many tools — one for writing, another for
+        designing, and a third for testing. Devscribe exists to end this
+        fragmentation. Our mission is to provide a single, calm workspace where
+        developers can think, write, and build without losing focus.
+      </p>
+
+      <div class="highlight">
+        <p style="color: var(--dark); margin: 0">
+          <strong>One workspace. One flow.</strong>
+          No switching between text editors, diagram tools, or API testers.
+          Write, visualize, and execute in the same place — Devscribe.
+        </p>
+      </div>
+
+      <h2>Why It Was Built</h2>
+      <p>
+        Devscribe started as an independent project — a personal experiment to
+        solve the frustration of constantly switching between tools while
+        documenting software systems. Each switch broke the creative flow and
+        slowed down progress.
       </p>
 
       <p>
-        I hope it saves you time, sparks creativity, and makes documentation
-        something you actually enjoy doing.
+        So, the idea was simple: build a single, lightweight app where
+        developers could document ideas, create diagrams, test snippets, and
+        connect databases — all in one seamless experience.
       </p>
 
-      <h2>🛠️ Made by One, Growing with Many</h2>
+      <h2>What Makes Devscribe Different</h2>
       <p>
-        I’m building Devscribe on my own — design, code, and content. But I
-        don’t want it to stay that way. If you love developer tools, clean
-        design, or good ideas, your help is welcome!
+        <strong>🧩 All-in-One Simplicity.</strong> Every aspect of documentation
+        — from code to diagrams — integrated into one smooth workspace.
       </p>
 
-      <ul>
-        <li>🎨 Help improve the UI or visual design</li>
-        <li>💻 Suggest new features or refine existing ones</li>
-        <li>🧠 Share your feedback, ideas, or use-cases</li>
-      </ul>
-
       <p>
-        If you’re a designer, developer, or just someone who cares about making
-        good tools — I’d love to hear from you.
+        <strong>⚙️ Executable Documentation.</strong> Devscribe transforms
+        static documentation into living, working examples. Code blocks run.
+        APIs test. Databases connect.
       </p>
 
-      <h2>📬 How to Reach Me</h2>
       <p>
-        You can write to me directly at
-        <a href="mailto:hello@devscribe.app">hello@devscribe.app</a>
-        or connect on
-        <a href="https://linkedin.com/in/avinash-iitb" target="_blank"
-          >LinkedIn</a
+        <strong>🍎 Built for macOS.</strong> A desktop-first experience
+        optimized for macOS and Apple Silicon. Beautiful, fast, and fully
+        offline.
+      </p>
+
+      <p>
+        <strong>💬 Community-Driven.</strong> Devscribe isn’t backed by a
+        company — it’s a community effort. Feedback, ideas, and design
+        suggestions directly shape how it evolves.
+      </p>
+
+      <h2>Built by Developers, for Developers</h2>
+      <p>
+        Every feature in Devscribe comes from real developer pain points — not
+        marketing ideas. It’s an honest attempt to make software creation feel
+        smoother and less fragmented. There’s no big team, no corporate roadmap
+        — just a continuous effort to build something genuinely useful.
+      </p>
+
+      <p>
+        If you’re a designer, developer, or writer who believes in better
+        documentation tools, your ideas are welcome. Help shape Devscribe with
+        your feedback, design improvements, or code suggestions.
+      </p>
+
+      <h2>Join the Journey</h2>
+      <p>
+        Devscribe is still growing — and it’s built in the open. Every bit of
+        feedback, idea, or contribution helps make it better for everyone.
+      </p>
+
+      <p>
+        You can reach out anytime at
+        <a
+          href="mailto:hello@devscribe.app"
+          style="color: var(--primary); text-decoration: none"
+          >hello@devscribe.app</a
         >.
       </p>
 
       <p>
-        I read every message personally. Whether it’s a small suggestion or a
-        big idea — it matters. Together, we can make Devscribe a space where
-        developers think, create, and document beautifully.
+        Together, let’s build a tool that helps developers document beautifully
+        and think clearly.
       </p>
 
-      <footer>
-        <p>
-          © 2025 Devscribe. Built with love, curiosity, and caffeine by Avinash.
+      <div style="text-align: center; margin-top: 4rem">
+        <a
+          href="/download"
+          style="
+            background: var(--dark);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-block;
+          "
+          >Download Devscribe</a
+        >
+        <p style="margin-top: 1rem; font-size: 1rem">
+          macOS 11.0 or later • Free Forever
         </p>
-      </footer>
-    </main>
+      </div>
+    </div>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "headline": "About Devscribe",
-        "description": "Devscribe is an independent project created by a single developer to unify documentation, code execution, and design in one workspace. Contributions and suggestions are always welcome.",
+        "headline": "About Devscribe | Built by Developers, for Developers",
+        "description": "Devscribe is a humble, all-in-one documentation tool built by developers, for developers — combining documentation, code execution, and diagrams in one elegant workspace.",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://devscribe.app/about"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Avinash Kumar"
         },
         "publisher": {
           "@type": "Organization",
