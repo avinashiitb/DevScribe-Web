@@ -4,58 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Devscribe - Desktop Editor for Software Documentation, LLD, HLD & Code
-      Execution on macOS
+      Devscribe - All-in-One Documentation Editor for Developers on macOS
     </title>
     <meta
       name="description"
-      content="Devscribe is a powerful macOS desktop editor for software engineers and architects. Execute code in JavaScript, TypeScript, Java, Python, SQL, create LLD/HLD diagrams, and test APIs - all in one place."
+      content="Devscribe is a powerful macOS editor for software engineers. Execute code in JavaScript, TypeScript, Java, Shell/Bash, SQL. Create diagrams and test APIs - all in one place."
     />
     <meta
       name="keywords"
-      content="software documentation tool, LLD editor, HLD architecture, code execution editor, API documentation, software architecture tool, technical documentation, developer tools, macOS developer app, diagramming tool, SQL editor, database documentation"
+      content="software documentation tool, code execution, diagramming tool, API testing, macOS developer app"
     />
-    <meta name="author" content="Devscribe" />
     <link rel="canonical" href="https://devscribe.app" />
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Devscribe - All-in-One Documentation Editor for Software Engineers on macOS"
+      content="Devscribe - All-in-One Documentation Editor"
     />
     <meta
       property="og:description"
-      content="Execute code, create diagrams, and test APIs in one powerful desktop editor. Built for software engineers and architects on macOS."
+      content="Execute code, create diagrams, and test APIs in one powerful macOS application."
     />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://devscribe.app" />
     <meta
       property="og:image"
       content="https://devscribe.app/images/og-image.jpg"
     />
-    <meta property="og:site_name" content="Devscribe" />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Devscribe - Desktop Editor for Software Documentation"
-    />
-    <meta
-      name="twitter:description"
-      content="Execute code, create diagrams, and test APIs in one powerful editor for macOS."
-    />
-    <meta
-      name="twitter:image"
-      content="https://devscribe.app/images/twitter-image.jpg"
-    />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/devscribe-logo.jpg" />
-    <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/devscribe-logo.jpg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/devscribe-logo.jpg" />
-    <link rel="shortcut icon" href="/images/devscribe-logo.jpg" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <style>
       * {
@@ -66,20 +42,17 @@
 
       :root {
         --primary: #2563eb;
-        --primary-dark: #1e40af;
-        --secondary: #10b981;
         --dark: #0f172a;
         --gray: #64748b;
-        --light: #f8fafc;
-        --border: #e2e8f0;
+        --light-gray: #f1f5f9;
       }
 
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+          sans-serif;
         line-height: 1.6;
         color: var(--dark);
-        overflow-x: hidden;
+        background: white;
       }
 
       /* Navigation */
@@ -90,13 +63,13 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid #e2e8f0;
       }
 
       .nav-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 1rem 2rem;
+        padding: 1.5rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -105,175 +78,166 @@
       .logo {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--primary);
+        color: var(--dark);
         text-decoration: none;
       }
 
       .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         list-style: none;
       }
 
       .nav-links a {
-        color: var(--dark);
+        color: var(--gray);
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s;
       }
 
       .nav-links a:hover {
-        color: var(--primary);
+        color: var(--dark);
       }
 
-      .cta-btn {
-        background: var(--primary);
+      .download-btn {
+        background: var(--dark);
         color: white;
         padding: 0.75rem 1.5rem;
-        border-radius: 8px;
+        border-radius: 6px;
         text-decoration: none;
         font-weight: 600;
-        transition: background 0.3s;
+        transition: opacity 0.3s;
       }
 
-      .cta-btn:hover {
-        background: var(--primary-dark);
-      }
-
-      /* Launch Banner */
-      .launch-banner {
-        background: var(--secondary);
-        color: white;
-        padding: 1rem 2rem;
-        text-align: center;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-top: 70px;
+      .download-btn:hover {
+        opacity: 0.9;
       }
 
       /* Hero Section */
       .hero {
-        padding: 5rem 2rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10rem 2rem 6rem;
         text-align: center;
       }
 
       .hero h1 {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.1;
         margin-bottom: 1.5rem;
-        animation: fadeInUp 0.8s ease;
+        letter-spacing: -0.02em;
       }
 
       .hero p {
         font-size: 1.5rem;
-        margin-bottom: 2rem;
-        opacity: 0.95;
-        animation: fadeInUp 0.8s ease 0.2s both;
+        color: var(--gray);
+        margin-bottom: 2.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .hero-cta {
+      .hero-buttons {
         display: flex;
         gap: 1rem;
         justify-content: center;
         flex-wrap: wrap;
-        animation: fadeInUp 0.8s ease 0.4s both;
       }
 
       .btn-primary {
-        background: white;
-        color: var(--primary);
+        background: var(--dark);
+        color: white;
         padding: 1rem 2rem;
-        border-radius: 10px;
+        border-radius: 6px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: inline-block;
+        transition: opacity 0.3s;
       }
 
       .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        opacity: 0.9;
       }
 
       .btn-secondary {
-        background: transparent;
-        color: white;
+        background: white;
+        color: var(--dark);
         padding: 1rem 2rem;
-        border: 2px solid white;
-        border-radius: 10px;
+        border: 2px solid var(--dark);
+        border-radius: 6px;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
-        transition: background 0.3s, color 0.3s;
+        transition: background 0.3s;
       }
 
       .btn-secondary:hover {
-        background: white;
-        color: var(--primary);
+        background: var(--dark);
+        color: white;
+      }
+
+      .launch-date {
+        margin-top: 2rem;
+        color: var(--gray);
+        font-size: 0.95rem;
       }
 
       /* Features Section */
       .features {
-        padding: 5rem 2rem;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 6rem 2rem;
       }
 
-      .section-title {
+      .section-header {
         text-align: center;
-        font-size: 2.5rem;
+        margin-bottom: 4rem;
+      }
+
+      .section-header h2 {
+        font-size: 3rem;
+        font-weight: 700;
         margin-bottom: 1rem;
-        color: var(--dark);
+        letter-spacing: -0.02em;
       }
 
-      .section-subtitle {
-        text-align: center;
+      .section-header p {
         font-size: 1.2rem;
         color: var(--gray);
-        margin-bottom: 3rem;
       }
 
-      .features-grid {
+      .features-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-top: 4rem;
       }
 
-      .feature-card {
-        padding: 2rem;
-        border-radius: 15px;
-        background: white;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      .feature-item {
+        text-align: center;
       }
 
       .feature-icon {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
 
-      .feature-card h3 {
+      .feature-item h3 {
         font-size: 1.5rem;
+        font-weight: 600;
         margin-bottom: 1rem;
-        color: var(--primary);
       }
 
-      .feature-card p {
+      .feature-item p {
         color: var(--gray);
-        line-height: 1.8;
+        line-height: 1.7;
       }
 
-      /* Demo Section */
+      /* Visual Demo Section */
       .demo {
-        background: white;
-        padding: 5rem 2rem;
+        background: var(--light-gray);
+        padding: 6rem 2rem;
       }
 
       .demo-container {
@@ -283,156 +247,58 @@
 
       .demo-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         margin-top: 3rem;
       }
 
-      .demo-card {
-        border-radius: 15px;
+      .demo-item {
+        background: white;
+        border-radius: 12px;
         padding: 2rem;
-        border: 2px solid var(--border);
+        border: 1px solid #e2e8f0;
       }
 
-      .demo-card img {
+      .demo-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .demo-item p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .demo-item img {
         width: 100%;
         border-radius: 8px;
-        margin: 1rem 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
+        border: 1px solid #e2e8f0;
       }
 
-      .demo-card img:hover {
-        transform: scale(1.02);
-      }
-
-      .demo-card h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .demo-card.blue {
-        border-color: #3b82f6;
-        background: linear-gradient(to bottom right, #dbeafe, #eff6ff);
-      }
-      .demo-card.purple {
-        border-color: #a855f7;
-        background: linear-gradient(to bottom right, #f3e8ff, #faf5ff);
-      }
-      .demo-card.green {
-        border-color: #10b981;
-        background: linear-gradient(to bottom right, #d1fae5, #ecfdf5);
-      }
-      .demo-card.orange {
-        border-color: #f97316;
-        background: linear-gradient(to bottom right, #fed7aa, #ffedd5);
-      }
-
-      /* Use Cases */
-      .use-cases {
-        background: var(--light);
-        padding: 5rem 2rem;
-      }
-
-      .use-cases-container {
-        max-width: 1200px;
+      /* CTA Section */
+      .cta {
+        max-width: 900px;
         margin: 0 auto;
-      }
-
-      .use-case-item {
-        background: white;
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-        border-radius: 10px;
-        border-left: 4px solid var(--primary);
-        display: flex;
-        gap: 1.5rem;
-        align-items: start;
-      }
-
-      .use-case-item h3 {
-        color: var(--primary);
-        margin-bottom: 0.5rem;
-        font-size: 1.3rem;
-      }
-
-      /* About Section */
-      .about {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 5rem 2rem;
+        padding: 6rem 2rem;
         text-align: center;
       }
 
-      .about-container {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .about h2 {
-        font-size: 2.5rem;
+      .cta h2 {
+        font-size: 3rem;
+        font-weight: 700;
         margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
       }
 
-      .about p {
+      .cta p {
         font-size: 1.3rem;
-        line-height: 1.8;
-        opacity: 0.95;
+        color: var(--gray);
+        margin-bottom: 2.5rem;
       }
 
-      /* Footer */
-      footer {
-        background: var(--dark);
-        color: white;
-        padding: 3rem 2rem;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-      }
-
-      .footer-section h4 {
-        margin-bottom: 1rem;
-        color: var(--secondary);
-      }
-
-      .footer-section a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        display: block;
-        margin-bottom: 0.5rem;
-        transition: color 0.3s;
-      }
-
-      .footer-section a:hover {
-        color: white;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
+      /* Mobile Responsive */
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.5rem;
@@ -442,12 +308,21 @@
           font-size: 1.2rem;
         }
 
-        .nav-links {
-          display: none;
+        .features-list {
+          grid-template-columns: 1fr;
+          gap: 3rem;
         }
 
         .demo-grid {
           grid-template-columns: 1fr;
+        }
+
+        .section-header h2 {
+          font-size: 2rem;
+        }
+
+        .cta h2 {
+          font-size: 2rem;
         }
       }
     </style>
@@ -456,364 +331,897 @@
     <!-- Navigation -->
     <nav>
       <div class="nav-container">
-        <a href="/" class="logo">Devscribe</a>
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/features/">Features</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/docs/">Documentation</a></li>
-        </ul>
-        <a href="/download/" class="cta-btn">Download for Mac</a>
+        <a href="/" class="logo"
+          >Devscribe<sup style="font-size: 0.5em; margin-left: 2px">™</sup></a
+        >
+        <a href="/download.html" class="download-btn">Download for Mac</a>
       </div>
     </nav>
 
-    <!-- Launch Countdown Banner -->
-    <div class="launch-banner">
-      🚀 Launching October 24, 2025 - Pre-register for Early Access!
-    </div>
-
     <!-- Hero Section -->
-    <header class="hero">
-      <h1>Design. Code. Document.<br />All in One Workspace.</h1>
+    <section class="hero">
+      <h1>Document, Diagram,<br />Execute Code.</h1>
       <p>
-        Next-generation document editor for developers, architects, and
-        educators on macOS
+        The all-in-one editor for software engineers and architects on macOS.
+        Write docs, create diagrams, run code, and test APIs in one place.
       </p>
-      <div class="hero-cta">
-        <a href="/download/" class="btn-primary">Download for macOS</a>
-        <a href="#features" class="btn-secondary">Explore Features</a>
+      <div class="hero-buttons">
+        <a href="/download.html" class="btn-primary">Download for macOS</a>
+        <a href="/features.html" class="btn-secondary">See Features</a>
       </div>
-      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8">
-        macOS 11.0 or later | Free Forever
-      </p>
-    </header>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-      <h2 class="section-title">Everything You Need in One Editor</h2>
-      <p class="section-subtitle">
-        Code execution, visual diagramming, and API documentation in a single
-        elegant workspace
-      </p>
-
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Multi-Language Code Execution</h3>
-          <p>
-            Run JavaScript, TypeScript, Java, Python, and SQL directly in your
-            documents. No terminal, no setup required. Perfect for testing,
-            learning, and documentation.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Diagramly - Visual Design Tool</h3>
-          <p>
-            Create ERD diagrams, UML class diagrams, HLD architectures, and DSA
-            visualizations with an intuitive drag-and-drop interface similar to
-            draw.io.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">🗄️</div>
-          <h3>Flexible SQL Database Connection</h3>
-          <p>
-            Configure and connect to any SQL database directly from settings.
-            Execute queries and view results in table or JSON format. Support
-            for MySQL, PostgreSQL, SQLite, and more.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">🔌</div>
-          <h3>API Documentation & Testing</h3>
-          <p>
-            Document and test APIs with environment variable support. Execute
-            requests and view formatted responses without leaving your document.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">📝</div>
-          <h3>Rich Text Documentation</h3>
-          <p>
-            Create comprehensive docs with headers, images, videos, tables, and
-            executable code blocks. Export to .ds format with all content
-            intact.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">🧩</div>
-          <h3>DSA Visualizations</h3>
-          <p>
-            Visualize data structures like stacks, queues, linked lists, arrays,
-            and matrices. Perfect for teaching algorithms and computer science
-            concepts.
-          </p>
-        </article>
-      </div>
+      <p class="launch-date">Launching October 24, 2025 • Free Forever</p>
     </section>
 
-    <!-- Demo Section with Images -->
+    <!-- Features Section -->
+    <section class="features">
+      <div class="section-header">
+        <h2>Everything in One Place</h2>
+        <p>No more switching between apps. Do it all in Devscribe.</p>
+      </div>
+
+      <div style="max-width: 1000px; margin: 3rem auto; position: relative">
+        <!-- Slider Container -->
+        <div
+          id="slider"
+          style="
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+          "
+        >
+          <div
+            id="slides"
+            style="display: flex; transition: transform 0.5s ease"
+          >
+            <!-- Slide 1: Code Execution -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3 style="font-size: 1.8rem; margin-bottom: 1rem">
+                💛 JavaScript Example
+              </h3>
+              <div
+                style="
+                  background: #2d3748;
+                  border-radius: 8px;
+                  padding: 1.5rem;
+                  color: #10b981;
+                  font-family: monospace;
+                  font-size: 0.9rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div style="color: #10b981">
+                  console.log(<span style="color: #fbbf24"
+                    >"🚀 Welcome to Devscribe JS Runner!"</span
+                  >);
+                </div>
+                <br />
+                <div style="color: #a78bfa">function</div>
+                <div style="color: #10b981">add(a, b) {</div>
+                <div style="padding-left: 2rem; color: #f87171">return</div>
+                <div style="color: #10b981">a + b;</div>
+                <div style="color: #10b981">}</div>
+                <br />
+                <div style="color: #10b981">
+                  console.log(<span style="color: #fbbf24"
+                    >"Sum of 5 + 10 ="</span
+                  >, add(5, 10));
+                </div>
+              </div>
+              <div
+                style="
+                  background: white;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 1rem;
+                "
+              >
+                <div style="color: #10b981; margin-bottom: 0.5rem">
+                  ✅ Output:
+                </div>
+                <div style="font-family: monospace; color: #64748b">
+                  🚀 Welcome to Devscribe JS Runner!<br />Sum of 5 + 10 = 15
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Diagrams (ERD) -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3 style="font-size: 1.8rem; margin-bottom: 2rem">
+                🗄️ Database ERD Diagram
+              </h3>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2rem;
+                  margin-top: 2rem;
+                "
+              >
+                <div
+                  style="
+                    background: #3b82f6;
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    text-align: center;
+                  "
+                >
+                  <div style="font-weight: bold; margin-bottom: 1rem">
+                    Users
+                  </div>
+                  <div style="text-align: left; font-size: 0.85rem">
+                    id (PK)<br />name<br />email
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #3b82f6;
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    text-align: center;
+                  "
+                >
+                  <div style="font-weight: bold; margin-bottom: 1rem">
+                    Orders
+                  </div>
+                  <div style="text-align: left; font-size: 0.85rem">
+                    id (PK)<br />user_id (FK)<br />total
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #3b82f6;
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    text-align: center;
+                  "
+                >
+                  <div style="font-weight: bold; margin-bottom: 1rem">
+                    Products
+                  </div>
+                  <div style="text-align: left; font-size: 0.85rem">
+                    id (PK)<br />name<br />price
+                  </div>
+                </div>
+              </div>
+              <div style="text-align: center; margin-top: 2rem; color: #64748b">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem">
+                  → 1:M → M:M ←
+                </div>
+                <p>Relationships: Users → Orders → Products</p>
+              </div>
+            </div>
+
+            <!-- Slide 3: API Testing -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3 style="font-size: 1.8rem; margin-bottom: 1rem">
+                🌐 API Documentation Tool
+              </h3>
+              <div
+                style="
+                  background: white;
+                  border: 2px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 1.5rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      background: #10b981;
+                      color: white;
+                      padding: 0.5rem 1rem;
+                      border-radius: 6px;
+                      font-weight: bold;
+                    "
+                  >
+                    GET
+                  </div>
+                  <div
+                    style="
+                      flex: 1;
+                      background: #f1f5f9;
+                      padding: 0.5rem 1rem;
+                      border-radius: 6px;
+                      font-family: monospace;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    https://api.example.com/users/1
+                  </div>
+                  <button
+                    style="
+                      background: #3b82f6;
+                      color: white;
+                      padding: 0.5rem 1.5rem;
+                      border: none;
+                      border-radius: 6px;
+                      font-weight: bold;
+                      cursor: pointer;
+                    "
+                  >
+                    Send
+                  </button>
+                </div>
+              </div>
+              <div
+                style="
+                  background: #2d3748;
+                  border-radius: 8px;
+                  padding: 1.5rem;
+                  color: #10b981;
+                  font-family: monospace;
+                  font-size: 0.85rem;
+                "
+              >
+                <div style="color: #64748b; margin-bottom: 0.5rem">
+                  Response:
+                </div>
+                {<br />
+                &nbsp;&nbsp;<span style="color: #fbbf24">"id"</span>:
+                <span style="color: #60a5fa">1</span>,<br />
+                &nbsp;&nbsp;<span style="color: #fbbf24">"name"</span>:
+                <span style="color: #34d399">"Leanne Graham"</span>,<br />
+                &nbsp;&nbsp;<span style="color: #fbbf24">"email"</span>:
+                <span style="color: #34d399">"user@example.com"</span><br />
+                }
+              </div>
+            </div>
+
+            <!-- Slide 4: SQL Database -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3 style="font-size: 1.8rem; margin-bottom: 1rem">
+                🧮 SQL Database - Sakila Example
+              </h3>
+              <div
+                style="
+                  background: #2d3748;
+                  border-radius: 8px;
+                  padding: 1.5rem;
+                  color: #10b981;
+                  font-family: monospace;
+                  font-size: 0.9rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div style="color: #a78bfa">SELECT</div>
+                c.first_name, c.last_name, f.title<br />
+                <div style="color: #a78bfa">FROM</div>
+                customer c<br />
+                <div style="color: #a78bfa">JOIN</div>
+                rental r
+                <div style="color: #a78bfa">ON</div>
+                c.customer_id<br />
+                <div style="color: #a78bfa">LIMIT</div>
+                <span style="color: #fbbf24">5</span>;
+              </div>
+              <div
+                style="
+                  background: white;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  overflow: hidden;
+                "
+              >
+                <table style="width: 100%; border-collapse: collapse">
+                  <thead style="background: #f1f5f9">
+                    <tr>
+                      <th
+                        style="
+                          padding: 0.75rem;
+                          text-align: left;
+                          border-bottom: 2px solid #e2e8f0;
+                        "
+                      >
+                        id
+                      </th>
+                      <th
+                        style="
+                          padding: 0.75rem;
+                          text-align: left;
+                          border-bottom: 2px solid #e2e8f0;
+                        "
+                      >
+                        name
+                      </th>
+                      <th
+                        style="
+                          padding: 0.75rem;
+                          text-align: left;
+                          border-bottom: 2px solid #e2e8f0;
+                        "
+                      >
+                        department
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        style="
+                          padding: 0.75rem;
+                          border-bottom: 1px solid #e2e8f0;
+                        "
+                      >
+                        1
+                      </td>
+                      <td
+                        style="
+                          padding: 0.75rem;
+                          border-bottom: 1px solid #e2e8f0;
+                        "
+                      >
+                        Alice
+                      </td>
+                      <td
+                        style="
+                          padding: 0.75rem;
+                          border-bottom: 1px solid #e2e8f0;
+                        "
+                      >
+                        Engineering
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0.75rem">2</td>
+                      <td style="padding: 0.75rem">Bob</td>
+                      <td style="padding: 0.75rem">Finance</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Slide 5: Rich Documentation -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3 style="font-size: 1.8rem; margin-bottom: 1rem">
+                📝 Rich Text Documentation
+              </h3>
+              <div
+                style="
+                  background: white;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 2rem;
+                "
+              >
+                <h4
+                  style="font-size: 1.5rem; margin-bottom: 1rem; color: #0f172a"
+                >
+                  Welcome to Devscribe
+                </h4>
+                <p
+                  style="color: #64748b; line-height: 1.8; margin-bottom: 1rem"
+                >
+                  Create comprehensive documentation with headers, paragraphs,
+                  images, videos, tables, and live code blocks - all in one
+                  elegant document.
+                </p>
+                <div
+                  style="
+                    background: #dbeafe;
+                    border-left: 4px solid #3b82f6;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    border-radius: 4px;
+                  "
+                >
+                  <p style="color: #1e40af; margin: 0">
+                    💡 <strong>Tip:</strong> Type "/" to explore all features —
+                    from running code to drawing diagrams.
+                  </p>
+                </div>
+                <ul style="color: #64748b; line-height: 2; margin-left: 1.5rem">
+                  <li>Mix text, code, and diagrams seamlessly</li>
+                  <li>Execute code blocks in multiple languages</li>
+                  <li>Export as .ds format with all content intact</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 6: DSA Visualizations -->
+            <div style="min-width: 100%; padding: 3rem; background: #f8fafc">
+              <h3
+                style="
+                  font-size: 1.8rem;
+                  margin-bottom: 2rem;
+                  text-align: center;
+                "
+              >
+                🧩 DSA Visualizations
+              </h3>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 3rem;
+                "
+              >
+                <div>
+                  <div
+                    style="
+                      background: #d1fae5;
+                      padding: 0.5rem 1rem;
+                      border-radius: 6px;
+                      text-align: center;
+                      margin-bottom: 1rem;
+                      font-weight: bold;
+                      color: #065f46;
+                    "
+                  >
+                    STACK Visual Representation
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 150px;
+                        background: #a7f3d0;
+                        border: 2px solid #10b981;
+                        padding: 1rem;
+                        text-align: center;
+                        border-radius: 4px;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      30
+                    </div>
+                    <div
+                      style="
+                        width: 150px;
+                        background: #a7f3d0;
+                        border: 2px solid #10b981;
+                        padding: 1rem;
+                        text-align: center;
+                        border-radius: 4px;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      20
+                    </div>
+                    <div
+                      style="
+                        width: 150px;
+                        background: #a7f3d0;
+                        border: 2px solid #10b981;
+                        padding: 1rem;
+                        text-align: center;
+                        border-radius: 4px;
+                      "
+                    >
+                      10
+                    </div>
+                    <div style="margin-top: 1rem; color: #64748b">↑ Pop</div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      background: #fed7aa;
+                      padding: 0.5rem 1rem;
+                      border-radius: 6px;
+                      text-align: center;
+                      margin-bottom: 1rem;
+                      font-weight: bold;
+                      color: #9a3412;
+                    "
+                  >
+                    ARRAY Visual Representation
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: repeat(3, 1fr);
+                      gap: 0.5rem;
+                      margin-top: 2rem;
+                    "
+                  >
+                    <div
+                      style="
+                        background: #fef3c7;
+                        border: 2px solid #f59e0b;
+                        padding: 1.5rem;
+                        text-align: center;
+                        border-radius: 4px;
+                        font-weight: bold;
+                      "
+                    >
+                      1
+                    </div>
+                    <div
+                      style="
+                        background: #fef3c7;
+                        border: 2px solid #f59e0b;
+                        padding: 1.5rem;
+                        text-align: center;
+                        border-radius: 4px;
+                        font-weight: bold;
+                      "
+                    >
+                      2
+                    </div>
+                    <div
+                      style="
+                        background: #fef3c7;
+                        border: 2px solid #f59e0b;
+                        padding: 1.5rem;
+                        text-align: center;
+                        border-radius: 4px;
+                        font-weight: bold;
+                      "
+                    >
+                      3
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <button
+          onclick="prevSlide()"
+          style="
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+          "
+        >
+          ❮
+        </button>
+        <button
+          onclick="nextSlide()"
+          style="
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+          "
+        >
+          ❯
+        </button>
+
+        <!-- Dots Indicator -->
+        <div style="text-align: center; margin-top: 2rem">
+          <span
+            onclick="goToSlide(0)"
+            id="dot-0"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: var(--dark);
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+          <span
+            onclick="goToSlide(1)"
+            id="dot-1"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+          <span
+            onclick="goToSlide(2)"
+            id="dot-2"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+          <span
+            onclick="goToSlide(3)"
+            id="dot-3"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+          <span
+            onclick="goToSlide(4)"
+            id="dot-4"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+          <span
+            onclick="goToSlide(5)"
+            id="dot-5"
+            style="
+              height: 12px;
+              width: 12px;
+              margin: 0 5px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              cursor: pointer;
+            "
+          ></span>
+        </div>
+
+        <!-- Feature Labels -->
+        <div style="text-align: center; margin-top: 2rem">
+          <div id="feature-label" style="font-size: 1.2rem; color: var(--gray)">
+            <strong id="feature-title">⚡ Code Execution</strong>
+            <p id="feature-desc" style="margin-top: 0.5rem">
+              Run JavaScript, TypeScript, Java, Shell/Bash, and SQL directly in
+              your documents
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        let currentSlide = 0;
+        const slides = document.getElementById("slides");
+        const totalSlides = 6;
+
+        const features = [
+          {
+            title: "⚡ Code Execution",
+            desc: "Run JavaScript, TypeScript, Java, Shell/Bash, and SQL directly in your documents",
+          },
+          {
+            title: "🗄️ Database ERD Diagrams",
+            desc: "Create entity-relationship diagrams with proper cardinality and relationships",
+          },
+          {
+            title: "🌐 API Documentation",
+            desc: "Document and test REST APIs with environment variables and formatted responses",
+          },
+          {
+            title: "🧮 SQL Database",
+            desc: "Pre-configured Sakila database for MySQL and SQLite for custom databases",
+          },
+          {
+            title: "📝 Rich Documentation",
+            desc: "Write comprehensive docs with headers, images, videos, tables, and live code blocks",
+          },
+          {
+            title: "🧩 DSA Visualizations",
+            desc: "Visualize data structures like stacks, queues, linked lists, arrays, and matrices",
+          },
+        ];
+
+        function updateSlide() {
+          slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+          // Update dots
+          for (let i = 0; i < totalSlides; i++) {
+            document.getElementById(`dot-${i}`).style.backgroundColor =
+              i === currentSlide ? "var(--dark)" : "#bbb";
+          }
+
+          // Update feature labels
+          document.getElementById("feature-title").textContent =
+            features[currentSlide].title;
+          document.getElementById("feature-desc").textContent =
+            features[currentSlide].desc;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateSlide();
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateSlide();
+        }
+
+        function goToSlide(index) {
+          currentSlide = index;
+          updateSlide();
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+      </script>
+    </section>
+
+    <!-- Multi-Language Code Execution Section -->
     <section class="demo">
       <div class="demo-container">
-        <h2 class="section-title">See Devscribe in Action</h2>
-        <p class="section-subtitle">
-          Real examples created with Devscribe's powerful features
-        </p>
+        <div class="section-header">
+          <h2>Multi-Language Code Execution</h2>
+          <p>
+            Run code instantly inside your document — no terminal, no setup
+            required
+          </p>
+        </div>
 
         <div class="demo-grid">
-          <article class="demo-card blue">
-            <h3>🗄️ Database ERD Diagrams</h3>
-            <img
-              src="./images/erd-diagram.png"
-              alt="Database ERD diagram showing relationships between Users, Orders, Products and OrderItems tables with primary and foreign keys in Devscribe"
-              loading="lazy"
-            />
+          <div class="demo-item">
+            <h3>💛 JavaScript & TypeScript</h3>
             <p>
-              Create professional entity-relationship diagrams for your database
-              schema. Visualize relationships between Users, Orders, Products,
-              and OrderItems with proper cardinality notation (1:M, M:1).
+              Run modern JS and TS code with console output. Perfect for
+              teaching snippets, testing logic, or sharing live examples.
             </p>
-            <p style="margin-top: 1rem">
-              <strong>Use case:</strong> Database design, schema documentation,
-              team collaboration
-            </p>
-          </article>
+          </div>
 
-          <article class="demo-card purple">
-            <h3>🏗️ UML Class Diagrams</h3>
-            <img
-              src="./images/uml-class-diagram.png"
-              alt="UML class diagram displaying UserController, UserService, UserRepository and DatabaseConnection with attributes and methods in Devscribe"
-              loading="lazy"
-            />
+          <div class="demo-item">
+            <h3>☕ Java</h3>
             <p>
-              Document your software architecture with UML class diagrams. Show
-              relationships between UserController, UserService, UserRepository,
-              and DatabaseConnection with attributes and methods.
+              Execute Java programs with full console support. Ideal for
+              algorithm demonstrations and educational content.
             </p>
-            <p style="margin-top: 1rem">
-              <strong>Use case:</strong> Backend architecture, OOP design,
-              system documentation
-            </p>
-          </article>
+          </div>
 
-          <article class="demo-card green">
-            <h3>⚡ Live Code Execution</h3>
-            <img
-              src="./images/code-execution.png"
-              alt="Code execution example in Devscribe showing JavaScript, TypeScript, Java, Python and SQL code with live output results"
-              loading="lazy"
-            />
+          <div class="demo-item">
+            <h3>💻 Shell / Bash</h3>
             <p>
-              Execute JavaScript, TypeScript, Java, Python, and SQL code
-              snippets with instant results. Mix code blocks seamlessly to show
-              code evolution and test different approaches.
+              Execute shell commands and bash scripts directly. Perfect for
+              system administration, automation, and DevOps workflows.
             </p>
-            <p style="margin-top: 1rem">
-              <strong>Use case:</strong> Tutorials, testing logic, interactive
-              documentation
-            </p>
-          </article>
+          </div>
 
-          <article class="demo-card orange">
-            <h3>☁️ AWS Architecture (HLD)</h3>
-            <img
-              src="./images/aws-hld-architecture.png"
-              alt="High-level design diagram showing AWS cloud architecture with CDN, Load Balancer, Node Services, Database and Redis Cache in Devscribe"
-              loading="lazy"
-            />
+          <div class="demo-item">
+            <h3>🗄️ SQL (MySQL & SQLite)</h3>
             <p>
-              Design high-level system architectures with AWS components.
-              Visualize CDN, Load Balancer, Node Services, Databases, and Redis
-              Cache with proper connections.
+              Pre-configured Sakila demo database for MySQL queries. Create
+              SQLite databases for practice and testing.
             </p>
-            <p style="margin-top: 1rem">
-              <strong>Use case:</strong> System design, cloud architecture,
-              technical proposals
-            </p>
-          </article>
+          </div>
+        </div>
 
-          <article
-            class="demo-card"
-            style="
-              border-color: #8b5cf6;
-              background: linear-gradient(to bottom right, #ede9fe, #f5f3ff);
-              grid-column: span 2;
-            "
-          >
-            <h3>🧩 DSA Visualizations</h3>
-            <img
-              src="./images/dsa-visualizations.png"
-              alt="Data structure visualizations showing Stack, Linked List, Array and Matrix representations in Devscribe diagramming tool"
-              loading="lazy"
-            />
-            <p>
-              Visualize data structures like stacks, queues, linked lists,
-              arrays, and matrices. Perfect for teaching algorithms, explaining
-              data structure concepts, and creating educational content.
-            </p>
-            <p style="margin-top: 1rem">
-              <strong>Use case:</strong> Algorithm teaching, CS education,
-              technical interviews preparation
-            </p>
-          </article>
+        <div style="margin-top: 2rem; text-align: center; color: var(--gray)">
+          <p>
+            <strong>✅ Mix languages seamlessly</strong> — Combine JS, TS, Java,
+            Shell/Bash, and SQL in one document
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Use Cases Section -->
-    <section class="use-cases">
-      <div class="use-cases-container">
-        <h2 class="section-title">Perfect For Every Developer Workflow</h2>
+    <!-- Diagramly Section -->
+    <section class="features">
+      <div class="section-header">
+        <h2>Diagramly — Visual Design Tool</h2>
+        <p>Create professional diagrams without leaving your document</p>
+      </div>
 
-        <article class="use-case-item">
-          <div style="font-size: 2rem">🏛️</div>
-          <div>
-            <h3>Software Architects</h3>
-            <p>
-              Design HLD and LLD architectures with AWS diagrams, microservices
-              flows, and system components. Document architectural decisions
-              with executable code examples and maintain everything in one place
-              for easy reference and team collaboration.
-            </p>
-          </div>
-        </article>
+      <div class="demo-grid" style="max-width: 1200px; margin: 0 auto">
+        <div class="demo-item">
+          <h3>🗄️ Database ERD Diagrams</h3>
+          <p>
+            Create entity-relationship diagrams with proper cardinality (1:M,
+            M:1). Perfect for database schema design and documentation.
+          </p>
+        </div>
 
-        <article class="use-case-item">
-          <div style="font-size: 2rem">💻</div>
-          <div>
-            <h3>Backend Engineers</h3>
-            <p>
-              Document APIs with environment variables (@baseUrl), test
-              endpoints directly within your docs, and maintain service
-              documentation alongside UML diagrams and working code examples.
-              Switch between dev, staging, and production environments
-              effortlessly.
-            </p>
-          </div>
-        </article>
+        <div class="demo-item">
+          <h3>🏗️ UML Class Diagrams</h3>
+          <p>
+            Document software architecture with UML class diagrams showing
+            relationships, attributes, and methods between classes.
+          </p>
+        </div>
 
-        <article class="use-case-item">
-          <div style="font-size: 2rem">✍️</div>
-          <div>
-            <h3>Technical Writers</h3>
-            <p>
-              Create comprehensive technical documentation with executable code
-              examples. Show live demonstrations with real output rather than
-              static code snippets. Perfect for creating tutorials, guides, and
-              technical specifications.
-            </p>
-          </div>
-        </article>
+        <div class="demo-item">
+          <h3>☁️ High-Level Design (HLD)</h3>
+          <p>
+            Design system architectures with AWS components, load balancers,
+            CDN, databases, and Redis cache.
+          </p>
+        </div>
 
-        <article class="use-case-item">
-          <div style="font-size: 2rem">🎓</div>
-          <div>
-            <h3>Educators & Students</h3>
-            <p>
-              Teach programming with live code execution, visualize data
-              structures with DSA diagrams (stacks, queues, linked lists,
-              arrays, matrices), and create interactive learning materials.
-              Execute SQL queries on any configured database for hands-on
-              practice.
-            </p>
-          </div>
-        </article>
+        <div class="demo-item">
+          <h3>🧩 DSA Visualizations</h3>
+          <p>
+            Visualize data structures like stacks, queues, linked lists, arrays,
+            and matrices for teaching and learning.
+          </p>
+        </div>
+      </div>
 
-        <article class="use-case-item">
-          <div style="font-size: 2rem">🗃️</div>
-          <div>
-            <h3>Database Designers</h3>
-            <p>
-              Create professional ERD diagrams with proper relationships,
-              connect to any SQL database through settings, test queries in
-              real-time, and document database schemas with visual
-              representations and executable SQL examples.
-            </p>
-          </div>
-        </article>
+      <div
+        style="
+          margin-top: 3rem;
+          text-align: center;
+          color: var(--gray);
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <p>
+          <strong>💡 Just type /diagram</strong> → choose Diagramly → and start
+          drawing! Export as PNG or SVG anytime.
+        </p>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
-      <div class="about-container">
-        <h2>Built by Developers, for Developers</h2>
-        <p>
-          Devscribe is an independent product focused on making software
-          documentation fast, beautiful, and powerful. Created by developers who
-          understand the challenges of maintaining technical documentation,
-          we're committed to building the best documentation tool for the modern
-          developer workflow.
-        </p>
+    <!-- API Testing Section -->
+    <section class="demo">
+      <div class="demo-container">
+        <div class="section-header">
+          <h2>🌐 API Documentation Tool</h2>
+          <p>
+            Document and test APIs directly within your document — no Postman or
+            other tools needed. Devscribe lets you execute real requests, view
+            formatted JSON or tabular responses, and even define reusable
+            environment variables.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="hero" style="margin-top: 0">
-      <h2>Ready to Transform Your Documentation Workflow?</h2>
-      <p>Join developers documenting smarter with Devscribe on macOS</p>
-      <div class="hero-cta">
-        <a href="/download/" class="btn-primary"
-          >Download Devscribe for macOS</a
-        >
-      </div>
-      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8">
-        macOS 11.0 or later • Free to download • Available October 24, 2025
-      </p>
+    <section class="cta">
+      <h2>Start Documenting Smarter</h2>
+      <p>Download Devscribe for macOS and get all features free forever.</p>
+      <a href="/download.html" class="btn-primary">Download for macOS</a>
+      <p class="launch-date">macOS 11.0 or later • 120 MB</p>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h4>Product</h4>
-          <a href="/features/">Features</a>
-          <a href="/download/">Download</a>
-          <a href="/docs/">Documentation</a>
-          <a href="/support.html">Support</a>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <a href="/docs/">Getting Started</a>
-          <a href="/blog/">Blog</a>
-          <a href="/docs/tutorials/">Tutorials</a>
-          <a href="/blog/">Changelog</a>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
-        </div>
-        <!-- <div class="footer-section">
-          <h4>Connect</h4>
-          <a href="https://twitter.com/devscribe" target="_blank" rel="noopener"
-            >Twitter</a
-          >
-          <a
-            href="https://linkedin.com/company/devscribe"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/devscribe" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          <a href="mailto:hello@devscribe.app">Email Us</a>
-        </div> -->
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Devscribe. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <!-- Structured Data for SEO -->
+    <!-- Schema.org structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -826,25 +1234,11 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Desktop editor for software engineers and architects to document services, create LLD/HLD diagrams, execute code in multiple languages (JavaScript, TypeScript, Java, Python, SQL), and test APIs - all in one macOS application.",
+        "description": "All-in-one documentation editor for software engineers. Execute code, create diagrams, and test APIs in one macOS application.",
         "url": "https://devscribe.app",
         "datePublished": "2025-10-24",
-        "screenshot": "https://devscribe.app/images/screenshot.png",
         "softwareVersion": "1.0",
-        "softwareRequirements": "macOS 11.0 or later",
-        "featureList": [
-          "Multi-language code execution (JavaScript, TypeScript, Java, Python, SQL)",
-          "Visual diagramming tool (Diagramly)",
-          "Database ERD diagrams",
-          "UML class diagrams",
-          "High-level design (HLD) with AWS components",
-          "DSA visualizations",
-          "API documentation and testing",
-          "Configurable SQL database connections",
-          "Support for MySQL, PostgreSQL, SQLite databases",
-          "Environment variable support",
-          "Rich text documentation"
-        ]
+        "softwareRequirements": "macOS 11.0 or later"
       }
     </script>
   </body>
